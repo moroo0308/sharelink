@@ -13,3 +13,55 @@
  *= require_tree .
  *= require_self
  */
+*{
+	margin: 0;
+  	padding: 0;
+  	box-sizing: border-box;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+a:hover{
+	color: red;
+	text-decoration: none;
+}
+/*header*/
+.header{
+	height: 50px;
+	width: 100%;
+	/*background-color: yellow;*/
+}
+.header_logo{
+	height: 100%;
+	width: 200px;
+	background-color: lightgreen;
+	float: left;
+}
+.header_search{
+	height: 100%;
+	width: 200px;
+	background-color: blue;
+	float: left;
+}
+.header_link{
+	height: 100%;
+	width: 500px;
+	background-color: #fff;
+	display: inline-block;
+	text-align: right;
+	list-style: none;
+	float: right;
+}
+.header_link li{
+	display: inline-block;
+}
+/*header fin*/
+/*NEWACCOUNT画面*/
+.user_newaccount, .user_signin{
+	text-align: center;
+}
+/*NEWACCOUNT画面 fin*/
+/*SIGN IN画面*/
+/*SIGN IN画面 fin*/
