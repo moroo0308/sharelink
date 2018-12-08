@@ -10,6 +10,30 @@
   </head>
 
   <body>
+    <div class="header">
+      <div class="header_logo">BookmarkOnline</div>
+      <div class="header_search"></div>
+        <ul class="header_link">
+          <% if user_signed_in? %>
+          <li>
+            <%= link_to "BOOKMARK" %>
+          </li>
+          <li>
+            <%= link_to "MYPAGE" %>
+          </li>
+          <li>
+            <%= link_to "LOGOUT" ,destroy_user_session_path, method: :delete%>
+          </li>
+          <% else %>
+          <li>
+            <%= link_to "LOGIN",new_user_session_path %>
+          </li>
+          <li>
+            <%= link_to "NEW ACCOUNT",new_user_registration_path %>
+          </li>
+          <% end %>
+        </ul>
+    </div>
     <%= yield %>
   </body>
 </html>
