@@ -27,23 +27,28 @@ a:hover{
 	color: red;
 	text-decoration: none;
 }
+body{
+	font-family: sans-serif;
+}
 /*header*/
 .header{
-	height: 50px;
+	height: 70px;
 	width: 100%;
 	/*background-color: yellow;*/
 }
 .header_logo{
 	height: 100%;
-	width: 200px;
-	background-color: lightgreen;
+	width: 20%;
+	background-color: #015db2;
 	float: left;
 }
 .header_search{
 	height: 100%;
 	width: 200px;
-	background-color: blue;
+	background-color: #015db2;
 	float: left;
+	border: 1px solid;
+	margin: 0px 10%;
 }
 .header_link{
 	height: 100%;
@@ -56,12 +61,18 @@ a:hover{
 }
 .header_link li{
 	display: inline-block;
+	float: left;
+	margin:5%;
 }
 /*header fin*/
-/*NEWACCOUNT画面*/
+/*NEWACCOUNT画面*/ /*SIGN IN画面*/
 .user_newaccount, .user_signin{
 	text-align: center;
 }
-/*NEWACCOUNT画面 fin*/
-/*SIGN IN画面*/
-/*SIGN IN画面 fin*/
+/*NEWACCOUNT画面 fin*/ /*SIGN IN画面 fin*/
+/*footer*/
+footer{
+	width: 100%;
+	height: 150px;
+	background-color: rgb(255,255,255);
+}

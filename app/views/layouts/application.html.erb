@@ -16,10 +16,10 @@
         <ul class="header_link">
           <% if user_signed_in? %>
           <li>
-            <%= link_to "BOOKMARK" %>
+            <%= link_to "BOOKMARK",books_new_path %>
           </li>
           <li>
-            <%= link_to "MYPAGE" %>
+            <%= link_to "MYPAGE",users_show_path %>
           </li>
           <li>
             <%= link_to "LOGOUT" ,destroy_user_session_path, method: :delete%>
@@ -36,4 +36,7 @@
     </div>
     <%= yield %>
   </body>
+  <footer>
+    
+  </footer>
 </html>
