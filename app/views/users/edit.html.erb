@@ -16,8 +16,11 @@
 	<div class="user_show_edit">
 	</div>
 </div>
+
 <div class="user_edit_right">
+	
 	<div class="user_edit_profilebox">
+		
 		<div class="user_edit_profilebox1">
 			<h3>個人設定</h3>
 		</div>
@@ -27,17 +30,27 @@
 		<div class="user_edit_userboxs">
 			<h3>ユーザアイコン</h3>
 		</div>
+		<%= form_for(@user) do |f| %>
 		<div class="user_edit_userboxs">
 			<h3>名前</h3>
+			<%= f.text_field :name %>
 		</div>
 		<div class="user_edit_userboxs">
 			<h3>E-MAIL</h3>
+			<%= f.email_field :email %>
 		</div>
 		<div class="user_edit_userboxs">
 			<h3>PASSWORD</h3>
+			<%= f.password_field :password %>
 		</div>
 		<div class="user_edit_userboxs">
 			<h3>PASSWORD 確認</h3>
+			<%= f.password_field :password_confirmation %>
 		</div>
+		<div class="user_edit_usersubmit">
+			<%= f.submit "保存" %>
+		</div>
+		<% end %>
 	</div>
 </div>
+
