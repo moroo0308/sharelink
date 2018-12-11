@@ -4,12 +4,23 @@ class UsersController < ApplicationController
   end
 
   def edit
-  	@user = User.find(params[:id])
+  	@user = User.find_by(id: current_user.id)
   end
 
   def destroy
   end
 
   def update
+  	@user = User.find(params[:id])
+  	if @user.update(user_params)
+         sign_in(@user, bypass: true)
+  		redirect_to user_path(@user), notce: "保存しました"
+  	else
+  		render :edit
+  	end
+  end
+  private
+  def user_params
+  	params.require(:user).permit(:name,:email,:password,:password_confirmation)
   end
 end

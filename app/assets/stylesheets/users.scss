@@ -119,3 +119,27 @@
 	position: absolute;
 	bottom: 0;
 }
+input#user_name,
+input#user_email,
+input#user_password,
+input#user_password_confirmation{
+	margin: 10px 300px;
+	font-size: 20px;
+	height: 40px;
+	width: 35%;
+	border: 1px solid #999999;
+	padding-left: 10px;
+}
+.user_edit_usersubmit{
+	width: 75%;
+	height: 10%;
+	margin: 0 auto;
+	text-align: center;
+}
+input[type="submit"]{
+	height: 50px;
+	width: 100px;
+	font-size: 20px;
+	border: 1px solid #999999;
+	border-radius: 4px;
+}
