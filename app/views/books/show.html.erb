@@ -1,2 +1,33 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<div class="book_show_center">
+	<div class="book_show_box1">
+		<h3>BOOKMARK</h3>
+	</div>
+	<div class="book_show_box2">
+		<h3>ブックマーク</h3>
+	</div>
+	<div class="book_show_all">
+		<div class="book_show_box_left">
+		</div>
+		<div class="book_show_box_right">
+			<div class="book_show_box3">
+				<h3>ARICLE</h3>
+				<%= @book.article %>
+			</div>
+			<div class="book_show_box3">
+				<h3>CATEGORY</h3>
+				<p>カテゴリー</p>
+			</div>
+			<div class="book_show_box3">
+				<h3>URL</h3>
+				<%= @book.url %>
+			</div>
+			<div class="book_show_box3">
+				<h3>DATE</h3>
+				<%= @book.updated_at %>
+			</div>
+			<div>
+				<%= link_to "編集",edit_book_path(@book.id) %>
+			</div>
+		</div>
+	</div>
+</div>

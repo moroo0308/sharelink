@@ -1,2 +1,33 @@
-<h1>Books#edit</h1>
-<p>Find me in app/views/books/edit.html.erb</p>
+<div class="book_edit_center">
+	<div class="book_edit_box1">
+		<h3>BOOKMARK EDIT</h3>
+	</div>
+	<div class="book_edit_box2">
+		<h3>ブックマーク</h3>
+	</div>
+	<div class="book_edit_all">
+		<div class="book_edit_box_left">
+		</div>
+		<div class="book_edit_box_right">
+			<%=form_for(@book) do |f| %>
+			<div class="book_edit_box3">
+				<h3>ARTICLE</h3>
+				<%= f.text_field :article %>
+			</div>
+			<div class="book_edit_box3">
+				<h3>CATEGORY</h3>
+				<p>カテゴリー</p>
+			</div>
+			<div class="book_edit_box3">
+				<h3>URL</h3>
+				<%= f.text_field :url %>
+			</div>
+			<div class="book_edit_box3">
+				<h3>DATE</h3>
+				<%= @book.updated_at %>
+			</div>
+			<%= f.submit "保存" %>
+			<% end %>
+		</div>
+	</div>
+</div>

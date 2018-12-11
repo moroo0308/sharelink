@@ -10,9 +10,9 @@
   </head>
 
   <body>
-    <div class="header">
-      <div class="header_logo"></div>
-      <div class="header_search"></div>
+    <header>
+    <div id="header">
+      <nav id="header-box">
         <ul class="header_link">
           <% if user_signed_in? %>
           <li>
@@ -33,8 +33,9 @@
           </li>
           <% end %>
         </ul>
+      </nav>
     </div>
-    <div class="all_box"></div>
+  </header>
     <%= yield %>
   </body>
   <footer>
