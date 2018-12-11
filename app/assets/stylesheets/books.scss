@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/*book_index*/
+/*-----------book_index------------*/
 .books_index_body1{
 	width: 100%;
 	height:300px;
@@ -19,22 +19,24 @@
 .books_index_body2{
 	width: 100%;
 	height:900px;
-	background-color: rgb(237,241,243);
-	padding-top: 10px;
+	background-color: #F8F7E9;
+	border-top: 1px solid #ebebeb;
 }
 .books_index_allbookmark{
 	background-color: rgba(255, 255, 255, 0.8);
 	width: 80%;
 	height: 70%;
-	margin: 5% auto;
+	margin: 0 auto;
 }
+
 .books_index_category{
 	width: 100%;
 	height: 20%;
 	background-color: rgb(255,255,255);
 	border-bottom: 1px solid #999999;
-	text-align: center;
-	padding-top: 3%;
+	text-align: left;
+	padding-top: 5%;
+	padding-left: 10%;
 	text-decoration: underline;
 }
 .books_index_bookmarks{
@@ -51,10 +53,12 @@
 }
 .books_index_bookmarks_box1{
 	width: 20%;
-	/*background-color: blue;*/
+	background-color: #fff;
 	height: 40%;
 	margin: 20px 0 45px 40px;
 	border: 1px solid #999999;
+	display: inline-block;
+	position: relative;
 }
 .books_index_bookmarks_image{
 	width: 100%;
@@ -64,8 +68,15 @@
 .books_index_bookmarks_name{
 
 }
+.books_index_updated_at{
+}
+.books_index_updated_at p{
+	position: absolute;
+	bottom: 0;
+	font-size: small;
+}
 
-/*books_new画面*/
+/*----------books_new画面---------------*/
 .books_new_body{
 	background-color: rgb(237,241,243);
 	width: 80%;
@@ -88,9 +99,9 @@
 .books_new_top_url_submit{
 
 }
-input#book_article,
-input#book_url,
-textarea#book_comment{
+.books_new_top_url input#book_article,
+.books_new_top_url input#book_url,
+.books_new_top_url textarea#book_comment{
 	width: 95%;
 	height: 60px;
 	border: 1px solid #999999;
@@ -108,4 +119,87 @@ input.books_new_top_url_submit{
 	height: 30px;
 	border-radius: 3px;
 	float: right;
+}
+/*------------book_show画面---------------*/
+
+/*------------book_edit画面---------------*/
+.book_show_center,
+.book_edit_center{
+	width: 80%;
+	height: 100%;
+	border: 1px solid #999999;
+	margin: 0 auto;
+	background-color: #ffffff;
+}
+.book_show_box1,
+.book_edit_box1{
+	width: 90%;
+	height: 10%;
+	border-bottom: 1px solid #999999;
+	margin: 0 auto;
+	position: relative;
+}
+.book_show_box1 h3,
+.book_edit_box1 h3{
+	position: absolute;
+	bottom: 0;
+}
+.book_show_box2,
+.book_edit_box2{
+	width: 90%;
+	height: 10%;
+	margin: 0 auto;
+	color: gray;
+	padding-left: 20px;
+}
+.book_show_all,
+.book_edit_all{
+	width: 80%;
+	height: 100%;
+	margin: 0 auto;
+}
+.book_show_box_left,
+.book_edit_box_left{
+	width: 33%;
+	height: 31%;
+	float: left;
+	border: 1px solid #999999;
+	margin: 13px;
+}
+.book_show_box_right,
+.book_edit_box_right{
+	width: 60%;
+	height: 80%;
+	float: right;
+}
+.book_show_box3{
+	width: 75%;
+	border-bottom: 1px solid #999999;
+	margin: 50px auto;
+	padding-left: 15px;
+	position: relative;
+	text-align: right;
+}
+.book_edit_box3{
+	width: 75%;
+	height: 10%;
+	border-bottom: 1px solid #999999;
+	margin: 30px auto;
+	padding-left: 15px;
+	position: relative;
+	text-align: right;
+}
+.book_show_box3 h3,
+.book_edit_box3 h3{
+	position: absolute;
+	bottom: 0;
+}
+.book_show_box3 h4{
+	position: absolute;
+	bottom: 0;
+	text-align: right;
+}
+.book_edit_box3 input#book_url{
+	font-size: 20px;
+	border: 1px solid #999999;
 }
