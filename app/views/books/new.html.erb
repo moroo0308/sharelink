@@ -1,1 +1,18 @@
-<div class="books_new_body"></div>
+<div class="notice">
+	<%if flash[:notice] %>
+	<% end %>
+</div>
+<div class="books_new_body">
+	<div class="books_new_top">
+		<h3>ブックマークするページのURLを入力</h3>
+	</div>
+	
+	<div class="books_new_top_url">
+		<%= form_for(@book) do |f| %>
+		<%= f.text_field :article, placeholder: "ブックマーク名" %>
+		<%= f.text_field :url, placeholder:"https://www.example.com" %>
+		<%= f.text_area :comment, placeholder:"無記入でも可" %>
+		<%= f.submit "投稿する" ,class: "books_new_top_url_submit" %>
+		<% end %>
+	</div>
+</div>

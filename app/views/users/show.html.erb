@@ -1,2 +1,32 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="user_show_left">
+	<div class="user_show_profile">
+		<div class="user_show_userimage"></div>
+		<div class="user_show_username">
+			<%=@user.name%>
+		</div>
+	</div>
+	<div class="user_show_count">
+		<div class="user_show_bookmarkcounts">
+			<h4>ブックマーク</h4>
+		</div>
+		<div class="user_show_favoritecounts">
+			<h4>お気に入り</h4>
+		</div>
+	</div>
+	<div class="user_show_edit">
+		<div class="user_show_useredit">
+			<h4><%= link_to "編集", edit_user_path %></h4>
+		</div>
+		<div class="user_show_userdestroy">
+			<h4><%= link_to "退会" %></h4>
+		</div>
+	</div>
+</div>
+<div class="user_show_right">
+	<div class="user_show_allbookmark">
+		<h3>BOOKMARK</h3>
+	</div>
+	<div class="user_show_allfavorites">
+		<h3>FAVORITE</h3>
+	</div>
+</div>

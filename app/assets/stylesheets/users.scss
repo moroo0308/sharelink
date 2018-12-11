@@ -1,3 +1,121 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/*user_show画面*/
+.user_show_left{
+	width: 22%;
+	height: 100%;
+	border-right: 1px solid #999999; 
+	margin-left: 100px;
+	display: inline-block;
+}
+.user_show_profile{
+	width: 100%;
+	height: 20%;
+	border: 1px solid #999999;
+}
+.user_show_userimage{
+	width: 30%;
+	height: 40%;
+	border: 1px solid #999999;
+	margin: 15%;
+	float: left;
+
+}
+.user_show_username{
+	float: left;
+	margin-top: 15%;
+	font-size: 18px;
+	color: #00a4de;
+}
+.user_show_count{
+	width: 100%;
+	height: 10%;
+	border: 1px solid #999999;
+}
+.user_show_bookmarkcounts,
+.user_show_favoritecounts{
+	width: 33%;
+	height: 100%;
+	border :1px solid;
+	float: left;
+	position: relative;
+}
+.user_show_bookmarkcounts h4,
+.user_show_favoritecounts h4{
+	position: absolute;
+	bottom: 0;
+}
+.user_show_edit{
+	width: 100%;
+	height: 50%;
+	border: 1px solid #999999;
+}
+.user_show_useredit,
+.user_show_userdestroy{
+	width: 60%;
+	height: 10%;
+	border: 1px solid #999999;
+	text-align: center;
+	margin: 10% auto;
+	padding-top: 4%;
+}
+.user_show_right,.user_edit_right{
+	width: 71%;
+	height: 100%;
+	float: right;
+	/*background-color: blue;*/
+	display: inline-block;
+}
+.user_show_allbookmark{
+	width: 50%;
+	height: 100%;
+	border: 1px solid #999999;
+	display: inline-block;
+	text-align: center;
+}
+.user_show_allfavorites{
+	width: 49%;
+	height: 100%;
+	border: 1px solid #999999;
+	display: inline-block;
+	text-align: center;
+}
+/*user_show画面　fin*/
+/*user_edit画面*/
+.user_edit_profilebox{
+	width: 80%;
+	height: 74%;
+	border: 1px solid #999999;
+	margin: 80px auto;
+}
+.user_edit_profilebox1{
+	width: 90%;
+	height: 10%;
+	border-bottom: 1px solid #999999;
+	margin: 0 auto;
+	position: relative;
+}
+.user_edit_profilebox1 h3{
+	position: absolute;
+	bottom: 0;
+}
+.user_edit_profilebox2{
+	width: 90%;
+	height: 10%;
+	margin: 0 auto;
+	color: gray;
+	padding-left: 20px;
+}
+.user_edit_userboxs{
+	width: 75%;
+	height: 10%;
+	border-bottom: 1px solid #999999;
+	margin: 0 auto;
+	position: relative;
+	padding-left: 15px;
+}
+.user_edit_userboxs h3{
+	position: absolute;
+	bottom: 0;
+}

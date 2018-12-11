@@ -11,15 +11,15 @@
 
   <body>
     <div class="header">
-      <div class="header_logo">BookmarkOnline</div>
+      <div class="header_logo"></div>
       <div class="header_search"></div>
         <ul class="header_link">
           <% if user_signed_in? %>
           <li>
-            <%= link_to "BOOKMARK",books_new_path %>
+            <%= link_to "BOOKMARK",new_book_path %>
           </li>
           <li>
-            <%= link_to "MYPAGE",users_show_path %>
+            <%= link_to "MYPAGE",user_path(current_user.id) %>
           </li>
           <li>
             <%= link_to "LOGOUT" ,destroy_user_session_path, method: :delete%>
@@ -34,6 +34,7 @@
           <% end %>
         </ul>
     </div>
+    <div class="all_box"></div>
     <%= yield %>
   </body>
   <footer>
