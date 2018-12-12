@@ -22,11 +22,25 @@
 				<%= @book.url %>
 			</div>
 			<div class="book_show_box3">
-				<h3>DATE</h3>
-				<%= @book.updated_at %>
+				<h3>NAME</h3>
+				<%= @book.user.name %>
 			</div>
 			<div>
 				<%= link_to "編集",edit_book_path(@book.id) %>
+			</div>
+			<div>
+				<!-- いいね機能 -->
+				<% if Favorite.find_by(user_id:current_user.id,book_id:@book.id) %>
+					<%= link_to("/favorites/#{@book.id}/destroy",{method: "post"}) do %>
+					<span class="fa fa-heart like-btn-unlike"></span>
+					<% end %>
+				<% else %>
+					<%= link_to("/favorites/#{@book.id}/create",{method: "post"}) do %>
+					<span class="fa fa-heart like-btn"></span>
+					<% end %>
+				<% end %>
+				<%= @favorites_count %>
+				<!-- いいね機能　fin -->
 			</div>
 		</div>
 	</div>
