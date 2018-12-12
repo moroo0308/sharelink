@@ -12,6 +12,7 @@
 	border-right: 1px solid #999999; 
 	margin-left: 100px;
 	display: inline-block;
+	background-color: #ffffff;
 }
 .user_show_profile{
 	width: 100%;
@@ -52,7 +53,7 @@
 }
 .user_show_edit{
 	width: 100%;
-	height: 50%;
+	height: 70%;
 	border: 1px solid #999999;
 }
 .user_show_useredit,
@@ -72,11 +73,13 @@
 	display: inline-block;
 }
 .user_show_allbookmark{
-	width: 50%;
+	width: 90%;
 	height: 100%;
 	border: 1px solid #999999;
-	display: inline-block;
+	/*display: inline-block;*/
 	text-align: center;
+	margin: 0 auto;
+	background-color: #ffffff;
 }
 .user_show_allfavorites{
 	width: 49%;
@@ -92,6 +95,7 @@
 	height: 74%;
 	border: 1px solid #999999;
 	margin: 80px auto;
+	background-color: #ffffff;
 }
 .user_edit_profilebox1{
 	width: 90%;

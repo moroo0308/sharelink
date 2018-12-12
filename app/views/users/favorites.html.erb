@@ -1,0 +1,55 @@
+<div class="user_show_all">
+	<div class="user_show_left">
+		<div class="user_show_profile">
+			<div class="user_show_userimage"></div>
+			<div class="user_show_username">
+				<%=@user.name%>
+			</div>
+		</div>
+		<div class="user_show_count">
+			<div class="user_show_bookmarkcounts">
+				<h4>ブックマーク</h4>
+			</div>
+			<div class="user_show_favoritecounts">
+				<h4>お気に入り</h4>
+			</div>
+		</div>
+		<div class="user_show_edit">
+			<div class="user_show_useredit">
+				<h4><%= link_to "EDIT", edit_user_path %></h4>
+			</div>
+			<div class="user_show_userdestroy">
+				<h4><%= link_to "LOGOUT" ,destroy_user_session_path, method: :delete%></h4>
+			</div>
+		</div>
+	</div>
+	<div class="user_show_right">
+		<div class="user_favorite_allbookmark">
+			<div class="user_favorite">
+				<h3>FAVORITE</h3>
+			</div>
+			<div class="user_favorite_favorites">
+				<div class="user_favorite_favorites_box">
+					<% @favorites.each do |favorite| %>
+					<% book = Book.find_by(id: favorite.book_id) %>
+					<div class="user_favorite_box">
+						<%= link_to book_path(book.id) do %>
+						<div class="user_favorite_bookmarks_image">
+						</div>
+						<% end %>
+						<div class="user_favorite_article">
+							<p><%= book.category %></p>
+							<h3><%= book.article %></h3>
+						</div>
+						<div class="user_favorite_name">
+							<div class="user_favorite_date"></div>
+							<span>TEXT BY</span>
+							<a><%= book.user.name %></a>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

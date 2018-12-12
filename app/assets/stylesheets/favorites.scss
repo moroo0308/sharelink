@@ -1,3 +1,72 @@
 // Place all the styles related to the Favorites controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user_favorite{
+ 	width: 100%;
+    height: 10%;
+    background-color: white;
+    border-bottom: 1px solid #999999;
+    text-align: left;
+    padding-top: 5%;
+    padding-left: 10%;
+    text-decoration: underline;
+
+}
+.user_favorite_allbookmark{
+	width: 90%;
+	height: 100%;
+	border: 1px solid #999999;
+	/*display: inline-block;*/
+	text-align: center;
+	margin: 0 auto;
+	background-color: #ffffff;
+}
+.user_favorite_favorites{
+	width: 100%;
+    height: 80%;
+    /* background-color: blue; */
+}
+.user_favorite_favorites_box{
+	width: 95%;
+    height: 90%;
+    /* background-color: blue; */
+    margin: 2%;
+    border: 1px solid #999999;
+}
+.user_favorite_box{
+	width: 300px;
+    background-color: #fff;
+    height: 50%;
+    margin: 20px 0 45px 40px;
+    border: 1px solid #999999;
+    display: inline-block;
+    position: relative;
+}
+.user_favorite_bookmarks_image{
+	width: 100%;
+    height: 60%;
+    border-bottom: 1px solid #999999;
+}
+.user_favorite_article{
+	/*border: 1px solid #999999;*/
+	width: 100%;
+	height: 132px;
+}
+.user_favorite_article p{
+	width: 100%;
+	height: 25px;
+}
+.user_favorite_name{
+	border: 1px solid #999999;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 20%;
+	padding-top: 15%;
+}
+.user_favorite_date{
+	width: 100%;
+	height: 10%;
+	border:1px solid #999999;
+}

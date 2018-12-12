@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   post "favorites/:book_id/create" => "favorites#create"
   post "favorites/:book_id/destroy" => "favorites#destroy"
+
+  get "users/:id/favorites" => "users#favorites"
   root "books#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

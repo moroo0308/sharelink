@@ -23,7 +23,7 @@
             <%= link_to "MYPAGE",user_path(current_user.id) %>
           </li>
           <li>
-            <%= link_to "LOGOUT" ,destroy_user_session_path, method: :delete%>
+            <%= link_to("FAVORITE", "/users/#{current_user.id}/favorites") %>
           </li>
           <% else %>
           <li>
