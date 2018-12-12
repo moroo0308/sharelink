@@ -1,11 +1,13 @@
 class BooksController < ApplicationController
   def index
-    @user = User.find_by(id: current_user.id)
+    # @user = User.find_by(id: current_user.id)
     @books = Book.all.order(created_at: "DESC")
   end
 
   def show
     @book = Book.find(params[:id])
+    @user= @book.user
+    @favorites_count = Favorite.where(book_id:@book.id).count
   end
 
   def new
