@@ -20,12 +20,15 @@
 	border: 1px solid #999999;
 }
 .user_show_userimage{
-	width: 30%;
-	height: 40%;
+	width: 40%;
+	height: 60%;
 	border: 1px solid #999999;
-	margin: 15%;
+	margin: 10%;
 	float: left;
-
+}
+.user_show_userimage_class{
+	width: 100%;
+	height: 100%;
 }
 .user_show_username{
 	float: left;
@@ -137,6 +140,13 @@
 	width: 35%;
 	border: 1px solid #999999;
 	padding-left: 10px;
+}
+.user_edit_userboxs input#user_image{
+	margin: 10px 300px;
+	height: 40px;
+	width: 35%;
+	padding-left: 10px;
+	padding-top: 3%;
 }
 .user_edit_usersubmit{
 	width: 75%;

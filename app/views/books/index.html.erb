@@ -22,6 +22,7 @@
 				<div class="books_index_bookmarks_box1">
 					<%= link_to book_path(book.id) do %>
 					<div class="books_index_bookmarks_image">
+						<%= attachment_image_tag book, :image,format: 'jpeg' %>
 					</div>
 					<% end %>
 					<div class="books_index_bookmarks_name">
