@@ -32,22 +32,9 @@
 				<%= @book.user.name %>
 			</div>
 			<div>
-				<%= link_to "編集",edit_book_path(@book.id) %>
+				<%= link_to "EDIT",edit_book_path(@book.id) %>
 			</div>
-			<div>
-				<!-- いいね機能 -->
-				<% if Favorite.find_by(user_id:current_user.id,book_id:@book.id) %>
-					<%= link_to("/favorites/#{@book.id}/destroy",{method: "post"}) do %>
-					<span class="fa fa-heart like-btn-unlike"></span>
-					<% end %>
-				<% else %>
-					<%= link_to("/favorites/#{@book.id}/create",{method: "post"}) do %>
-					<span class="fa fa-heart like-btn"></span>
-					<% end %>
-				<% end %>
-				<span><%= @favoritescount %></span>
-				<!-- いいね機能　fin -->
-			</div>
+			
 		</div>
 	</div>
 </div>

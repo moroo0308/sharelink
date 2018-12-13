@@ -27,13 +27,31 @@ a:hover{
 	color: red;
 	text-decoration: none;
 }
+@font-face{
+	font-family: "hoge";
+	src: font-url('logotypejp_mp_m_1.1.ttf') format('truetype');
+}
 body{
-	font-family: sans-serif;
+	font-family:'hoge';
 	height:1000px;
 	background-color: #F8F7E9;
 	position: relative; /*slide_menuに対してのposition位置の起点にする*/
 	left: 0;
 	overflow-x: hidden;
+	/*font-size: 21px;*/
+}
+.header_logo{
+	background-image: url(logo.png);
+	width: 100%;
+	height: 20%;
+	margin: 0 auto;
+	background-size: cover;
+	background-position: center;
+}
+.header_logo a{
+	display: block;
+	width: 100%;
+	height: 100%;
 }
 /*スライドメニュー*/
 #slide_menu{
@@ -72,10 +90,10 @@ body{
 /*スライドメニュー fin*/
 
 /*----イイね機能色------*/
-.like-btn-unlike{
+.like_btn_unlike{
 	color:#ff2581;
 }
-.like-btn{
+.like_btn{
 	color:#8899a6;
 }
 /*header*/
