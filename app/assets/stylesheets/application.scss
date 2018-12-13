@@ -30,8 +30,27 @@ a:hover{
 body{
 	font-family: sans-serif;
 	height:1000px;
-	background-color: #F8F7E9
+	background-color: #F8F7E9;
+	position: relative; /*slide_menuに対してのposition位置の起点にする*/
+	left: 0;
+	overflow-x: hidden;
 }
+/*スライドメニュー*/
+#slide_menu{
+	position: fixed;
+	top: 0;
+	left: -240px;
+	width: 240px;
+	height: 100%;
+	background-color: black;
+	border-right: 1px solid #999999;
+}
+#button{
+	width: 10%;
+	height: 70px;
+	/*background-color: black;*/
+}
+/*スライドメニュー fin*/
 
 /*----イイね機能色------*/
 .like-btn-unlike{
@@ -42,19 +61,22 @@ body{
 }
 /*header*/
 header{
-	height: 92px;
+	/*height: 92px;*/
 	width: 100%;
 	border-top: 4px solid #14B8D5;
-	border-bottom: 1px solid #ebebeb;
-	background-color: #ffffff;
+	/*border-bottom: 1px solid #ebebeb;*/
+	/*background-color: #ffffff;*/
 }
 #header{
 	width: 1000px;
-	margin: 0 auto;
+	/*margin: 0 auto;*/
 }
 #header-box{
 	width: 820px;
 	margin-left: 180px;
+}
+.header-name{
+	
 }
 
 
