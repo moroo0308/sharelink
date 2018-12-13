@@ -16,3 +16,21 @@
 //= require_tree .
 //= require jquery
 //= require jquery_ujs
+
+$(function(){
+var menu = $('#slide_menu'), //スライドインするメニューを指定
+	menuBtn = $('#button'),
+	body = $(document.body),
+	menuWidth = menu.outerWidth();  // 要素の外部の幅（borderとpaddingは含める）を取得します。(true)だったらmarginも含める。
+
+	menuBtn.on('click',function(){ //クリックした時、
+	body.toggleClass('open'); //bodyにopenクラスを付与する、toggleclass => 指定したclass'open'が要素に無ければ追加し、あれば削除する。
+		if(body.hasClass('open')){ //openクラスが body についてたら
+			body.animate({'left' : menuWidth}, 250); //メニューをスライドインする
+			menu.animate({'left' : 0 }, 250);
+		}else{
+			menu.animate({'left' : -menuWidth},250);  //ついてなかったらスライドアウトさせる
+			body.animate({'left' : 0 }, 250);
+		}
+	});
+});
