@@ -14,13 +14,16 @@
 	</div>
 	<div class="user_show_count">
 		<div class="user_show_bookmarkcounts">
-			<h4>ブックマーク</h4>
+				<h4>BOOKMARK</h4>
+			</div>
+			<div class="user_show_favoritecounts">
+				<h4>FAVORITE</h4>
+			</div>
+			<div class="user_show_favoritecounts">
+				<h4>FAVORITE</h4>
+			</div>
 		</div>
-		<div class="user_show_favoritecounts">
-			<h4>お気に入り</h4>
-		</div>
-	</div>
-	<div class="user_show_edit">
+		<div class="user_show_edit">
 	</div>
 </div>
 
@@ -29,18 +32,18 @@
 	<div class="user_edit_profilebox">
 		
 		<div class="user_edit_profilebox1">
-			<h3>個人設定</h3>
+			<h3>USER SETTING</h3>
 		</div>
 		<div class="user_edit_profilebox2">
-			<h3>プロフィール</h3>
+			<h3>PROFILE</h3>
 		</div>
 		<%= form_for(@user) do |f| %>
 		<div class="user_edit_userboxs">
-			<h3>ユーザアイコン</h3>
+			<h3>USER ICON</h3>
 			<%= f.attachment_field :image %>
 		</div>
 		<div class="user_edit_userboxs">
-			<h3>名前</h3>
+			<h3>NAME</h3>
 			<%= f.text_field :name %>
 		</div>
 		<div class="user_edit_userboxs">
@@ -52,7 +55,7 @@
 			<%= f.password_field :password %>
 		</div>
 		<div class="user_edit_userboxs">
-			<h3>PASSWORD 確認</h3>
+			<h3>PASSWORD CONFIRMATION</h3>
 			<%= f.password_field :password_confirmation %>
 		</div>
 		<div class="user_edit_usersubmit">

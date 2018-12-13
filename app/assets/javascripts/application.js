@@ -33,4 +33,26 @@ var menu = $('#slide_menu'), //スライドインするメニューを指定
 			body.animate({'left' : 0 }, 250);
 		}
 	});
+	//スライドメニュー fin
 });
+// $(function(){
+//   $('.like_btn').on('click',function(){
+//     var $likeBtn = $(this);
+//     var $postId = $likeBtn.attr("book_id");
+//     var $like = $(this).find('i');
+//     var $btnClass = $like.attr("class");
+
+//     var url = $btnClass == 'far fa-heart unlike' ? '/create' : '/destroy';
+
+//     $.ajax({
+//       url: '/favorites/'+ $postId + url,
+//       type:'POST',
+//     }).done(function(data){
+//       if($like.hasClass('unlike')){
+//         $like.removeClass('far unlike').addClass('fas like');
+//       }else{
+//         $like.removeClass('fas like').addClass('far unlike');
+//       }
+//     });
+//   });
+// });

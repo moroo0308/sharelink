@@ -1,6 +1,7 @@
 
 <div class="books_index_body1">
 	<div class="books_index_pickup">
+		<h2>Share Link</h2>
 	</div>
 </div>
 <header>
@@ -33,6 +34,18 @@
 					</div>
 					<div class="books_index_updated_at">
 						<p><%= book.updated_at %></p>
+					</div>
+					<div>
+						<% if Favorite.find_by(user_id:current_user.id,book_id:book.id) %>
+							<%= link_to("/favorites/#{book.id}/destroy",{method: "post"}) do %>
+							<span class="fa fa-heart like_btn_unlike"></span>
+							<% end %>
+						<% else %>
+							<%= link_to("/favorites/#{book.id}/create",{method: "post"}) do %>
+							<span class="fa fa-heart like_btn"></span>
+							<% end %>
+						<% end %>
+						<span><%= @favoritescount %></span>
 					</div>
 				</div>
 				<% end %>
