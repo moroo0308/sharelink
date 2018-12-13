@@ -44,12 +44,31 @@ body{
 	height: 100%;
 	background-color: black;
 	border-right: 1px solid #999999;
+	text-align: center;
+}
+#slide_menu li{
+	margin: 30% 0;
+}
+#slide_menu a{
+	color: #ffffff;
+	font-size: 20px;
+	border-bottom: 1px solid #ffffff;
 }
 #button{
 	width: 10%;
 	height: 70px;
+	background-color: #333;
+  border: 2px solid #333;
+  color: #fff;
+  line-height: 50px;
 	/*background-color: black;*/
 }
+#button:hover {
+  background-color: #fff;
+  border-color: #59b1eb;
+  color: #59b1eb;
+}
+
 /*スライドメニュー fin*/
 
 /*----イイね機能色------*/

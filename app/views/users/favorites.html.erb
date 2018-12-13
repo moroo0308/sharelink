@@ -6,7 +6,9 @@
 <div class="user_show_all">
 	<div class="user_show_left">
 		<div class="user_show_profile">
-			<div class="user_show_userimage"></div>
+			<div class="user_show_userimage">
+				<%= attachment_image_tag @user, :image,format: 'jpeg' , class: "user_show_userimage_class" %>
+			</div>
 			<div class="user_show_username">
 				<%=@user.name%>
 			</div>

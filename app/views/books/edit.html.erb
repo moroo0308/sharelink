@@ -11,10 +11,13 @@
 		<h3>ブックマーク</h3>
 	</div>
 	<div class="book_edit_all">
+		
 		<div class="book_edit_box_left">
+			<%= attachment_image_tag @book, :image,format: 'jpeg' %>
 		</div>
+		<%=form_for(@book) do |f| %>
 		<div class="book_edit_box_right">
-			<%=form_for(@book) do |f| %>
+			<%= f.attachment_field :image %>
 			<div class="book_edit_box3">
 				<h3>ARTICLE</h3>
 				<%= f.text_field :article %>

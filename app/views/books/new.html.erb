@@ -14,7 +14,7 @@
 	
 	<div class="books_new_top_url">
 		<%= form_for(@book) do |f| %>
-
+		<%= f.select :article, [["国語", "国語"]]%>
 		<%= f.text_field :article, placeholder: "ブックマーク名" %>
 		<%= f.text_field :url, placeholder:"https://www.example.com" %>
 		<%= f.text_area :comment, placeholder:"無記入でも可" %>
