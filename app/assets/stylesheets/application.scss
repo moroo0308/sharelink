@@ -80,6 +80,7 @@ body{
   color: #fff;
   line-height: 50px;
 	/*background-color: black;*/
+	float: left;
 }
 #button:hover {
   background-color: #fff;
@@ -112,8 +113,11 @@ header{
 	width: 820px;
 	margin-left: 180px;
 }
-.header-name{
-	
+header h3{
+	width: 90%;
+    text-align: center;
+    float: left;
+    margin-top: 25px;
 }
 
 
