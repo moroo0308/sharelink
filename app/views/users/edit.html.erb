@@ -1,68 +1,40 @@
-<header>
-    <div id="header">
-       <button id="button">MENU</button>
-    </div>
-  </header>
-<div class="user_show_left">
-	<div class="user_show_profile">
-		<div class="user_show_userimage">
-			<%= attachment_image_tag @user, :image,format: 'jpeg' , class: "user_show_userimage_class" %>
-		</div>
-		<div class="user_show_username">
-			<%=@user.name%>
-		</div>
-	</div>
-	<div class="user_show_count">
-		<div class="user_show_bookmarkcounts">
-				<h4>BOOKMARK</h4>
+<div class="user_show_all">
+	<%= render 'users/userlist',user:@user %>
+	<div class="user_edit_right">
+		<div class="user_edit_profilebox">
+			<div class="user_edit_profilebox1">
+				<h3>USER SETTING</h3>
 			</div>
-			<div class="user_show_favoritecounts">
-				<h4>FAVORITE</h4>
+			<div class="user_edit_profilebox2">
+				<h3>PROFILE</h3>
 			</div>
-			<div class="user_show_favoritecounts">
-				<h4>FAVORITE</h4>
+			<%= form_for(@user) do |f| %>
+			<div class="user_edit_userboxs">
+				<h3>USER ICON</h3>
+				<%= f.attachment_field :image %>
 			</div>
+			<div class="user_edit_userboxs">
+				<h3>NAME</h3>
+				<%= f.text_field :name %>
+			</div>
+			<div class="user_edit_userboxs">
+				<h3>E-MAIL</h3>
+				<%= f.email_field :email %>
+			</div>
+			<div class="user_edit_userboxs">
+				<h3>PASSWORD</h3>
+				<%= f.password_field :password %>
+			</div>
+			<div class="user_edit_userboxs">
+				<h3>PASSWORD CONFIRMATION</h3>
+				<%= f.password_field :password_confirmation %>
+			</div>
+			<div class="user_edit_usersubmit">
+				<%= f.submit "保存" %>
+			</div>
+			<% end %>
+			<%= link_to "戻る" ,:back %>
 		</div>
-		<div class="user_show_edit">
-	</div>
-</div>
-
-<div class="user_edit_right">
-	
-	<div class="user_edit_profilebox">
-		
-		<div class="user_edit_profilebox1">
-			<h3>USER SETTING</h3>
-		</div>
-		<div class="user_edit_profilebox2">
-			<h3>PROFILE</h3>
-		</div>
-		<%= form_for(@user) do |f| %>
-		<div class="user_edit_userboxs">
-			<h3>USER ICON</h3>
-			<%= f.attachment_field :image %>
-		</div>
-		<div class="user_edit_userboxs">
-			<h3>NAME</h3>
-			<%= f.text_field :name %>
-		</div>
-		<div class="user_edit_userboxs">
-			<h3>E-MAIL</h3>
-			<%= f.email_field :email %>
-		</div>
-		<div class="user_edit_userboxs">
-			<h3>PASSWORD</h3>
-			<%= f.password_field :password %>
-		</div>
-		<div class="user_edit_userboxs">
-			<h3>PASSWORD CONFIRMATION</h3>
-			<%= f.password_field :password_confirmation %>
-		</div>
-		<div class="user_edit_usersubmit">
-			<%= f.submit "保存" %>
-		</div>
-		<% end %>
-		<%= link_to "戻る" ,:back %>
 	</div>
 </div>
 

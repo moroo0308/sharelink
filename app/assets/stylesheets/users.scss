@@ -1,66 +1,72 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-/*user_show画面*/
+
+
+/*_userlist画面*/
+
 .user_show_all{
 	width: 100%;
-	height: 1000px;
+	height: 100%;
+	margin-top: 5%;
 }
-.user_show_left{
-	width: 22%;
+.user_list_left{
+	width: 20%;
 	height: 100%;
 	border-right: 1px solid #999999;
 	/*margin-left: 100px;*/
 	display: inline-block;
 	background-color: #ffffff;
 }
-.user_show_profile{
+.user_list_profile{
 	width: 100%;
 	height: 20%;
 	border: 1px solid #999999;
 }
-.user_show_userimage{
+.user_list_userimage{
 	width: 40%;
 	height: 60%;
 	border: 1px solid #999999;
 	margin: 10%;
 	float: left;
 }
-.user_show_userimage_class{
+.user_list_userimage_class{
 	width: 100%;
 	height: 100%;
 }
-.user_show_username{
+.user_list_username{
 	float: left;
 	margin-top: 15%;
 	font-size: 18px;
 	color: #00a4de;
 }
-.user_show_count{
+.user_list_count{
 	width: 100%;
 	height: 10%;
 	border: 1px solid #999999;
 }
-.user_show_bookmarkcounts,
-.user_show_favoritecounts{
+.user_list_bookmarkcounts,
+.user_list_favoritecounts,
+.user_list_favoritecounters{
 	width: 33%;
 	height: 100%;
 	/*border :1px solid;*/
 	float: left;
 	position: relative;
 }
-.user_show_bookmarkcounts h4,
-.user_show_favoritecounts h4{
+.user_list_bookmarkcounts h4,
+.user_list_favoritecounts h4,
+.user_list_favoritecounters h4{
 	position: absolute;
 	bottom: 0;
 }
-.user_show_edit{
+.user_list_edit{
 	width: 100%;
 	height: 70%;
 	border: 1px solid #999999;
 }
-.user_show_useredit,
-.user_show_userdestroy{
+.user_list_useredit,
+.user_list_userdestroy{
 	width: 60%;
 	height: 10%;
 	border: 1px solid #999999;
@@ -68,14 +74,25 @@
 	margin: 10% auto;
 	padding-top: 4%;
 }
-.user_show_right,.user_edit_right{
-	width: 70%;
+
+
+
+
+
+
+
+
+/*user_show*/
+
+.user_show_right,
+.user_edit_right{
+	width: 80%;
 	height: 100%;
 	float: right;
 	/*background-color: blue;*/
 	display: inline-block;
 }
-.user_show_allbookmark{
+.user_allbookmark{
 	width: 90%;
 	height: 100%;
 	border: 1px solid #999999;
@@ -84,14 +101,67 @@
 	margin: 0 auto;
 	background-color: #ffffff;
 }
-.user_show_allfavorites{
-	width: 49%;
-	height: 100%;
-	border: 1px solid #999999;
+.user_title{
+ 	width: 100%;
+    height: 10%;
+    background-color: white;
+    border-bottom: 1px solid #999999;
+    text-align: left;
+    padding-top: 5%;
+    padding-left: 10%;
+    text-decoration: underline;
+}
+.user_bookmark,
+.user_favorite{
+	width: 100%;
+    height: 80%;
+    /* background-color: blue; */
+}
+.user_bookmark_box,
+.user_favorite_box{
+	width: 95%;
+    height: 90%;
+    /* background-color: blue; */
+    margin: 2%;
+    border: 1px solid #999999;
+}
+#user_show_filterbtn{
+	width: 100%;
+	height: 10%;
+	border-bottom:1px solid #999999;
+	padding-top: 25px;
+}
+#user_show_filterbtn a{
+	margin: 0 10px;
+	padding: 5px 30px;
+	border: 1px solid #ddd;
+	border-radius: 30px;
+	background: #fff;
+	background:linear-gradient(to bottom,#fff 40%, #ddd 100%);
+}
+#user_show_filterbtn a:hover{
+	background:#fff;
+}
+#user_show_filterbtn a.active{
+	color: #ff0000;
+	font-weight: bold;
+	background:#fff;
+}
+
+#user_show_filterList{
+	width: 100%;
+	height: 90%;
+	border:1px solid #999999;
+	text-align: left;
+}
+#user_show_filterList li{
 	display: inline-block;
-	text-align: center;
 }
 /*user_show画面　fin*/
+
+
+
+
 /*user_edit画面*/
 .user_edit_profilebox{
 	width: 80%;

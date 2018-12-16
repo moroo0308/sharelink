@@ -1,42 +1,36 @@
-<header>
-    <div id="header">
-       <button id="button">MENU</button>
-    </div>
-  </header>
 <div class="user_show_all">
-	<div class="user_show_left">
-		<div class="user_show_profile">
-			<div class="user_show_userimage">
-				<%= attachment_image_tag @user, :image,format: 'jpeg' , class: "user_show_userimage_class" %>
-			</div>
-			<div class="user_show_username">
-				<%=@user.name%>
-			</div>
-		</div>
-		<div class="user_show_count">
-			<div class="user_show_bookmarkcounts">
-				<h4>BOOKMARK</h4>
-			</div>
-			<div class="user_show_favoritecounts">
-				<h4>FAVORITE</h4>
-			</div>
-			<div class="user_show_favoritecounts">
-				<h4>FAVORITE</h4>
-			</div>
-		</div>
-		<div class="user_show_edit">
-			<div class="user_show_useredit">
-				<h4><%= link_to "EDIT", edit_user_path %></h4>
-			</div>
-			<div class="user_show_userdestroy">
-				<h4><%= link_to "LOGOUT" ,destroy_user_session_path, method: :delete%></h4>
-			</div>
-		</div>
-	</div>
+	<%= render 'users/userlist',user:@user %>
 	<div class="user_show_right">
-		<div class="user_show_allbookmark">
-			<h3>BOOKMARK</h3>
+		<div class="user_allbookmark">
+			<div class="user_title">
+				<h3>BOOKMARK</h3>
+			</div>
+			<div class="user_bookmark">
+				<div class="user_bookmark_box">
+					<div id="user_show_filterbtn">
+						<a href="javascript:void(0);" class="allitem">All</a>
+						<a href="javascript:void(0);" class="htmlcss">HTML&CSS</a>
+						<a href="javascript:void(0);" class="rubyonrails">RUBY ON TAILS</a>
+						<a href="javascript:void(0);" class="javascript">JAVASCRIPT</a>
+						<a href="javascript:void(0);" class="github">GITHUB</a>
+					</div>
+					
+					
+					<div id="user_show_filterList">
+						<% @user.books.each do |book| %>
+						<ul>
+							<li><%= book.category %></li>
+							<li><%= book.article %></li>
+							<li><%= text_url_to_link(h(book.url)).html_safe %></li>
+							<li><%= book.comment %></li>
+							<li><%= book.created_at %></li>
+							
+						</ul>
+						<% end %>
+					</div>
+				</div>
+
+			</div>
 		</div>
-		
 	</div>
 </div>

@@ -81,6 +81,7 @@ body{
   line-height: 50px;
 	/*background-color: black;*/
 	float: left;
+	position: fixed;
 }
 #button:hover {
   background-color: #fff;
@@ -99,7 +100,7 @@ body{
 }
 /*header*/
 header{
-	/*height: 92px;*/
+	/*height: 10%;*/
 	width: 100%;
 	border-top: 4px solid #14B8D5;
 	/*border-bottom: 1px solid #ebebeb;*/
