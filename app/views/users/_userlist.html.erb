@@ -1,0 +1,29 @@
+<div class="user_list_left">
+	<div class="user_list_profile">
+		<div class="user_list_userimage">
+			<%= attachment_image_tag user, :image,format: 'jpeg' , class: "user_list_userimage_class" %>
+		</div>
+		<div class="user_list_username">
+			<%=user.name%>
+		</div>
+	</div>
+	<div class="user_list_count">
+		<div class="user_list_bookmarkcounts">
+			<h4>BOOKMARK</h4>
+		</div>
+		<div class="user_list_favoritecounts">
+			<h4>FAVORITE</h4>
+		</div>
+		<div class="user_list_favoritecounters">
+			<h4>FAVORITERS</h4>
+		</div>
+	</div>
+	<div class="user_list_edit">
+		<div class="user_list_useredit">
+			<h4><%= link_to "EDIT", edit_user_path %></h4>
+		</div>
+		<div class="user_list_userdestroy">
+			<h4><%= link_to "LOGOUT" ,destroy_user_session_path, method: :delete%></h4>
+		</div>
+	</div>
+</div>

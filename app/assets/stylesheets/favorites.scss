@@ -2,39 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.user_favorite{
- 	width: 100%;
-    height: 10%;
-    background-color: white;
-    border-bottom: 1px solid #999999;
-    text-align: left;
-    padding-top: 5%;
-    padding-left: 10%;
-    text-decoration: underline;
 
-}
-.user_favorite_allbookmark{
+/*.user_favorite_allbookmark{
 	width: 90%;
 	height: 100%;
 	border: 1px solid #999999;
-	/*display: inline-block;*/
+	display: inline-block;
 	text-align: center;
 	margin: 0 auto;
 	background-color: #ffffff;
-}
-.user_favorite_favorites{
+}*/
+.user_bookmark,
+.user_favorite{
 	width: 100%;
     height: 80%;
     /* background-color: blue; */
 }
-.user_favorite_favorites_box{
+.user_bookmark_box,
+.user_favorite_box{
 	width: 95%;
     height: 90%;
     /* background-color: blue; */
     margin: 2%;
     border: 1px solid #999999;
 }
-.user_favorite_box{
+.user_bookmark_box1,
+.user_favorite_box1{
 	width: 300px;
     background-color: #fff;
     height: 50%;

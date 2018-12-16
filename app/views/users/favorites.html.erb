@@ -1,48 +1,15 @@
-<header>
-    <div id="header">
-       <button id="button">MENU</button>
-    </div>
-  </header>
 <div class="user_show_all">
-	<div class="user_show_left">
-		<div class="user_show_profile">
-			<div class="user_show_userimage">
-				<%= attachment_image_tag @user, :image,format: 'jpeg' , class: "user_show_userimage_class" %>
-			</div>
-			<div class="user_show_username">
-				<%=@user.name%>
-			</div>
-		</div>
-		<div class="user_show_count">
-			<div class="user_show_bookmarkcounts">
-				<h4>BOOKMARK</h4>
-			</div>
-			<div class="user_show_favoritecounts">
-				<h4>FAVORITE</h4>
-			</div>
-			<div class="user_show_favoritecounts">
-				<h4>FAVORITE</h4>
-			</div>
-		</div>
-		<div class="user_show_edit">
-			<div class="user_show_useredit">
-				<h4><%= link_to "EDIT", edit_user_path %></h4>
-			</div>
-			<div class="user_show_userdestroy">
-				<h4><%= link_to "LOGOUT" ,destroy_user_session_path, method: :delete%></h4>
-			</div>
-		</div>
-	</div>
+	<%= render 'users/userlist',user:@user %>
 	<div class="user_show_right">
-		<div class="user_favorite_allbookmark">
-			<div class="user_favorite">
+		<div class="user_allbookmark">
+			<div class="user_title">
 				<h3>FAVORITE</h3>
 			</div>
-			<div class="user_favorite_favorites">
-				<div class="user_favorite_favorites_box">
+			<div class="user_favorite">
+				<div class="user_favorite_box">
 					<% @favorites.each do |favorite| %>
 					<% book = Book.find_by(id: favorite.book_id) %>
-					<div class="user_favorite_box">
+					<div class="user_favorite_box1">
 						<%= link_to book_path(book.id) do %>
 						<div class="user_favorite_bookmarks_image">
 						</div>
