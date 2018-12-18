@@ -39,6 +39,9 @@ body{
 	left: 0;
 	overflow-x: hidden;
 	/*font-size: 21px;*/
+	background-image: url(raw.jpg);
+	background-size: cover;
+	background-position: center;
 }
 .header_logo{
 	background-image: url(logo.png);
@@ -74,18 +77,18 @@ body{
 }
 #button{
 	width: 10%;
-	height: 70px;
-	background-color: #333;
-  border: 2px solid #333;
+	height: 100%;
+	background-color: black;
+  border: 2px solid black;
   color: #fff;
-  line-height: 50px;
+  line-height: 60px;
 	/*background-color: black;*/
 	float: left;
-	position: fixed;
+	/*position: fixed;*/
 }
 #button:hover {
-  background-color: #fff;
-  border-color: #59b1eb;
+  background-color: black;
+  /*border-color: #59b1eb;*/
   color: #59b1eb;
 }
 
@@ -100,14 +103,15 @@ body{
 }
 /*header*/
 header{
-	/*height: 10%;*/
+	height: 7%;
 	width: 100%;
-	border-top: 4px solid #14B8D5;
+	/*border-top: 4px solid #14B8D5;*/
 	/*border-bottom: 1px solid #ebebeb;*/
-	/*background-color: #ffffff;*/
+	background-color: black;
 }
 #header{
 	width: 1000px;
+	height: 70px;
 	/*margin: 0 auto;*/
 }
 #header-box{
@@ -145,10 +149,23 @@ header h3{
 	text-align: center;
 }
 /*NEWACCOUNT画面 fin*/ /*SIGN IN画面 fin*/
+
+#back{
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+}
+#back img{
+	width: 50px;
+}
+
 /*footer*/
 footer{
 	width: 100%;
 	height: 150px;
-	background-color: rgb(255,255,255);
-	border: 1px solid #999999;
+	background-color: black;
+	text-align: center;
+	color: #fff;
+	padding-top: 50px;
+	/*border: 1px solid #999999;*/
 }

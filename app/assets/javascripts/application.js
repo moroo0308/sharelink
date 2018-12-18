@@ -33,6 +33,24 @@ var menu = $('#slide_menu'), //スライドインするメニューを指定
 		}
 	});
 	//スライドメニュー fin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
 // $(function(){
 //   $('.like_btn').on('click',function(){
