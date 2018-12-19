@@ -71,6 +71,7 @@ img.attachment.book.image{
 	text-align: center;
 	overflow: scroll;
 	/*background-color: #fff;*/
+
 }
 .books_index_box{
 	width: 25%;
@@ -82,6 +83,7 @@ img.attachment.book.image{
 	text-align: left;
 	overflow: hidden;
 	border-radius: 5px;
+	box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
 }
 .books_index_box2{
 	width: 20%;
@@ -92,6 +94,7 @@ img.attachment.book.image{
 	border:1px solid #999999;
 	text-align: left;
 	overflow: hidden;
+	box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
 }
 .books_index_box_image{
 	width: 100%;
@@ -178,31 +181,52 @@ img.attachment.book.image{
 	height: 100%;
 	border:1px solid #999999;
 	float: left;
-	background:#fff;
+	background-color: rgba(255, 255, 255, 0.1);
 	text-align: center;
+	padding-top: 30px;
 }
-.books_index_search input[type="text"]{
-	padding: 5px 5px 3px;
-	font-size: 16px;
-	border:1px solid #d6d6d6;
+.books_index_search h1{
+	text-decoration: underline;
+	margin: 0 auto;
+	width: 50%;
 }
-.books_index_search input[type="text"]:focus{
-	background:#f9f9f9;
+.wrapper{
+	text-align: left;
 }
-.search-result{
-	margin-top: 20px;
+.search-area{
+	text-align: center;
+	padding: 30px 0 20px 0;
 }
-.search-result__hit-num span{
-	font-weight: bold;
+.search-area input[type="text"] {
+  padding: 5px 5px 3px;
+  font-size: 16px;
+  border: 1px solid #D6D6D6;
 }
-#search-result__list{
-	margin-top: 15px;
+
+.search-area input[type="text"]:focus {
+  background: #F9F9F9;
 }
-#search-result__list span{
-	display: inline-block;
-	margin-right: 15px;
-	padding: 5px;
-	background:#f2f2f2;
+
+.search-result {
+  margin-top: 20px;
+}
+.search-result__hit-num ul {
+  font-weight: bold;
+}
+#search-result__list {
+  margin-top: 15px;
+  text-align: left;
+}
+#search-result__list ul {
+  display: inline-block;
+  margin-right: 15px;
+  padding: 5px;
+  background: #F2F2F2;
+  width: 100%;
+  word-break: break-word;
+}
+.target-area {
+  margin-top: 50px;
 }
 
 
@@ -299,24 +323,31 @@ input.books_new_top_url_submit{
 }
 .book_show_all,
 .book_edit_all{
-	width: 80%;
+	width: 90%;
 	height: 100%;
 	margin: 0 auto;
 }
+.book_show_leftright_box{
+	width: 80%;
+	height: 40%;
+	margin:0 auto;
+}
 .book_show_box_left,
 .book_edit_box_left{
-	width: 33%;
-	height: 31%;
+	width: 30%;
+	height: 70%;
 	float: left;
 	border: 1px solid #999999;
 	margin: 13px;
 	background-color: #fff;
+	box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
 }
 .book_show_box_right,
 .book_edit_box_right{
 	width: 60%;
-	height: 80%;
+	height: 90%;
 	float: right;
+	box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
 }
 .book_show_box3{
 	width: 75%;
@@ -348,4 +379,15 @@ input.books_new_top_url_submit{
 .book_edit_box3 input#book_url{
 	font-size: 20px;
 	border: 1px solid #999999;
+}
+.book_show_box4{
+	width: 75%;
+	margin: 0 auto;
+	text-align: center;
+}
+.book_show_comments{
+	background-color: #ffffff;
+	margin: 0 auto;
+	width: 80%;
+	height: 20%;
 }
