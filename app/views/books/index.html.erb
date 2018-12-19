@@ -1,12 +1,124 @@
 <div class="books_index_body1">
 	<div class="books_index_pickup">
-		<h2>Share Link</h2>
+		<h1>Share Link</h1>
 	</div>
 </div>
 <div class="books_index_body2">
 	<div class="books_index_allbookmark">
 		<div class="books_index_category">
-			<h3>NEW BOOKMARK</h3>
+			<h1>新着記事</h1>
+		</div>
+		<div class="books_index_bookmarks">
+			<% @books.each do |book| %>
+			<div class="books_index_box">
+				<%= link_to book_path(book.id) do %>
+				<div class="books_index_box_image">
+					<%= attachment_image_tag book, :image,format: 'jpeg' %>
+				</div>
+				<% end %>
+				<div class="books_index_box_category_article">
+					<div class="books_index_box_category">
+						<p><%= book.category %></p>
+					</div>
+					<div class="books_index_box_article">
+						<p><%= book.article %></p>
+						<p><%= text_url_to_link(book.url).html_safe %></p>
+					</div>
+				</div>
+				<div class="books_index_box_date_favorite">
+					<div class="books_index_box_date">2年前</div>
+					<div class="books_index_box_favorite">
+						<% if Favorite.find_by(user_id:current_user.id,book_id:book.id) %>
+							<%= link_to("/favorites/#{book.id}/destroy",{method: "post"}) do %>
+							<span class="fa fa-heart like_btn_unlike"></span>
+							<% end %>
+						<% else %>
+							<%= link_to("/favorites/#{book.id}/create",{method: "post"}) do %>
+							<span class="fa fa-heart like_btn"></span>
+							<% end %>
+						<% end %>
+						<span><%= book.favorites.count %></span>
+					</div>
+				</div>
+				<div class="books_index_box_name_icon">
+					<div class="books_index_box_name">
+						<p>TEXT BY<%= link_to book.user.name, user_path(book.user.id) %></p>
+					</div>
+					<%= link_to user_path(book.user.id) do %>
+					<div class="books_index_box_icon">
+						<%= attachment_image_tag book.user, :image,format: 'jpeg'%>
+					</div>
+					<% end %>
+				</div>
+			</div>
+			<% end %>
+		</div>
+		<div class="books_index_category">
+			<h1>全てのブックマークサイト</h1>
+		</div>
+		<div class="books_index_bookmarks2">
+			<% @books1.each do |book| %>
+			<div class="books_index_box2">
+				<%= link_to book_path(book.id) do %>
+				<div class="books_index_box_image">
+					<%= attachment_image_tag book, :image,format: 'jpeg' %>
+				</div>
+				<% end %>
+				<div class="books_index_box_category_article">
+					<div class="books_index_box_category">
+						<p><%= book.category %></p>
+					</div>
+					<div class="books_index_box_article">
+						<p><%= book.article %></p>
+						<p><%= text_url_to_link(book.url).html_safe %></p>
+					</div>
+				</div>
+				<div class="books_index_box_date_favorite">
+					<div class="books_index_box_date">2年前</div>
+					<div class="books_index_box_favorite">
+						<% if Favorite.find_by(user_id:current_user.id,book_id:book.id) %>
+							<%= link_to("/favorites/#{book.id}/destroy",{method: "post"}) do %>
+							<span class="fa fa-heart like_btn_unlike"></span>
+							<% end %>
+						<% else %>
+							<%= link_to("/favorites/#{book.id}/create",{method: "post"}) do %>
+							<span class="fa fa-heart like_btn"></span>
+							<% end %>
+						<% end %>
+						<span><%= book.favorites.count %></span>
+					</div>
+				</div>
+				<div class="books_index_box_name_icon">
+					<div class="books_index_box_name">
+						<p>TEXT BY<%= link_to book.user.name, user_path(book.user.id) %></p>
+					</div>
+					<%= link_to user_path(book.user.id) do %>
+					<div class="books_index_box_icon">
+						<%= attachment_image_tag book.user, :image,format: 'jpeg'%>
+					</div>
+					<% end %>
+				</div>
+			</div>
+			<% end %>
 		</div>
 	</div>
+	<div class="books_index_search">
+		<h1>検索</h1>
+		  <div class="wrapper">
+		    <div class="search-area">
+		      <form>
+		        <input type="text" id="search-text" placeholder="検索ワードを入力">
+		      </form>
+		      <div class="search-result">
+		        <div class="search-result__hit-num"></div>
+		        <div id="search-result__list"></div>
+		      </div>
+		    </div>
+
+		    
+		  </div><!-- /.wrapper -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+	</div>
+	
 </div>

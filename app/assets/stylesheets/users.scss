@@ -82,6 +82,9 @@
 
 
 
+
+
+
 /*user_show*/
 
 .user_show_right,
@@ -154,9 +157,31 @@
 	border:1px solid #999999;
 	text-align: left;
 }
+#user_show_filterList ul{
+	border:1px solid #999999;
+	height: 6%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding-left: 40px;
+}
+
+#user_show_filterList ul:nth-child(even){
+	background-color: #faf9fa;
+}
+#user_show_filterList ul:hover{
+	background:#eeeeee;
+}
 #user_show_filterList li{
 	display: inline-block;
+	width: 20%;
+	text-align: left ;
+	max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
 }
+
 /*user_show画面　fin*/
 
 

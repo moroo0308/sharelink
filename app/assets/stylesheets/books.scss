@@ -24,30 +24,209 @@ img.attachment.book.image{
 	margin: 0 auto;
 	/*text-align: center;*/
 	text-decoration: underline;
-	padding-top: 17%;
+	padding-top: 15%;
 	color: #ffffff;
 	font-size: -webkit-xxx-large;
 }
 .books_index_body2{
 	width: 100%;
-	height:900px;
+	height:2000px;
 	background-color: #F8F7E9;
 	/*border-top: 1px solid #ebebeb;*/
+	background-image: url(raw.jpg);
+	background-size: cover;
+	background-position: center;
 }
 .books_index_allbookmark{
-	background-color: rgba(255, 255, 255, 0.8);
-	width: 90%;
+	background-color: rgba(255, 255, 255, 0.1);
+	width: 70%;
 	height: 100%;
-	margin: 0 auto;
+	float: left;
+	border:1px solid #999999;
+	/*margin: 0 auto;*/
+	/*padding-top: 100px;*/
+
 }
 
 .books_index_category{
 	width: 100%;
-	padding: 20px 0 20px 0;
-	background-color: rgb(255,255,255);
-	border-bottom: 1px solid #999999;
+	padding: 30px 0 20px 0;
+	/*background-color: rgba(255, 255, 255, 0.5);*/
+	/*border-bottom: 1px solid #999999;*/
 	text-decoration: underline;
 	text-align: center;
+}
+.books_index_bookmarks{
+	width: 100%;
+	height: 25%;
+	border-bottom: 1px solid #999999;
+	text-align: center;
+	/*overflow: scroll;*/
+	/*background-color: #fff;*/
+}
+.books_index_bookmarks2{
+	width: 100%;
+	height: 66%;
+	border-bottom: 1px solid #999999;
+	text-align: center;
+	overflow: scroll;
+	/*background-color: #fff;*/
+
+}
+.books_index_box{
+	width: 25%;
+	height: 90%;
+	background-color: #fff;
+	display: inline-block;
+	margin: 35px;
+	border:1px solid #999999;
+	text-align: left;
+	overflow: hidden;
+	border-radius: 5px;
+	box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+}
+.books_index_box2{
+	width: 20%;
+	height: 30%;
+	background-color: #fff;
+	display: inline-block;
+	margin: 35px;
+	border:1px solid #999999;
+	text-align: left;
+	overflow: hidden;
+	box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+}
+.books_index_box_image{
+	width: 100%;
+	height: 50%;
+	border-bottom:1px solid #999999;
+}
+.books_index_box_image:hover{
+	opacity: 0.5;
+}
+.books_index_box_image img.attachment.book.image{
+	width: 100%;
+	height: 100%;
+}
+.books_index_box_category_article{
+	width: 100%;
+	height: 30%;
+	/*border: 1px solid #999999;*/
+}
+.books_index_box_category{
+	width: 100%;
+	height: 20%;
+	/*border:1px solid #999999;*/
+}
+.books_index_box_article{
+	width: 100%;
+	height: 80%;
+	padding: 15px;
+	word-break: break-word;
+	border-bottom:1px solid #999999;
+}
+.books_index_box_date_favorite{
+	width: 100%;
+	height: 10%;
+	/*border: 1px solid #999999;*/
+}
+.books_index_box_date{
+	width: 50%;
+	height: 100%;
+	border-bottom:1px solid #999999;
+	float: left;
+	/*font-size: 35px;*/
+	padding-top: 15px;
+	text-align: center;
+	background-color: #E6E6E6;
+	border-right: 1px solid #999999;
+}
+.books_index_box_favorite{
+	width: 50%;
+	height: 100%;
+	border-bottom:1px solid #999999;
+	float: left;
+	font-size: 20px;
+	padding-top: 15px;
+	text-align: center;
+	background-color: #E6E6E6;
+}
+
+
+.books_index_box_name_icon{
+	width: 100%;
+	height: 10%;
+	/*border: 1px solid #999999;*/
+	background-color: #E6E6E6;
+}
+.books_index_box_name{
+	width: 85%;
+	height:100%;
+	/*border:1px solid #999999;*/
+	float: left;
+	padding: 5px;
+}
+.books_index_box_icon{
+	width: 15%;
+	height: 100%;
+	/*border:1px solid #999999;*/
+	float: left;
+}
+.books_index_box_icon img.attachment.user.image{
+	width: 100%;
+	height: 100%;
+}
+.books_index_search{
+	width: 30%;
+	height: 100%;
+	border:1px solid #999999;
+	float: left;
+	background-color: rgba(255, 255, 255, 0.1);
+	text-align: center;
+	padding-top: 30px;
+}
+.books_index_search h1{
+	text-decoration: underline;
+	margin: 0 auto;
+	width: 50%;
+}
+.wrapper{
+	text-align: left;
+}
+.search-area{
+	text-align: center;
+	padding: 30px 0 20px 0;
+}
+.search-area input[type="text"] {
+  padding: 5px 5px 3px;
+  font-size: 16px;
+  border: 1px solid #D6D6D6;
+}
+
+.search-area input[type="text"]:focus {
+  background: #F9F9F9;
+}
+
+.search-result {
+  margin-top: 20px;
+}
+.search-result__hit-num ul {
+  font-weight: bold;
+}
+#search-result__list {
+  margin-top: 15px;
+  text-align: left;
+}
+#search-result__list ul {
+  display: inline-block;
+  margin-right: 15px;
+  padding: 5px;
+  background: #F2F2F2;
+  width: 100%;
+  word-break: break-word;
+}
+.target-area {
+  margin-top: 50px;
 }
 
 
@@ -112,11 +291,14 @@ input.books_new_top_url_submit{
 /*------------book_edit画面---------------*/
 .book_show_center,
 .book_edit_center{
-	width: 80%;
+	/*width: 80%;*/
 	height: 100%;
 	border: 1px solid #999999;
 	margin: 0 auto;
 	background-color: #ffffff;
+	background-image: url(raw.jpg);
+	background-size: cover;
+	background-position: center;
 }
 .book_show_box1,
 .book_edit_box1{
@@ -126,8 +308,8 @@ input.books_new_top_url_submit{
 	margin: 0 auto;
 	position: relative;
 }
-.book_show_box1 h3,
-.book_edit_box1 h3{
+.book_show_box1 h1,
+.book_edit_box1 h1{
 	position: absolute;
 	bottom: 0;
 }
@@ -141,23 +323,31 @@ input.books_new_top_url_submit{
 }
 .book_show_all,
 .book_edit_all{
-	width: 80%;
+	width: 90%;
 	height: 100%;
 	margin: 0 auto;
 }
+.book_show_leftright_box{
+	width: 80%;
+	height: 40%;
+	margin:0 auto;
+}
 .book_show_box_left,
 .book_edit_box_left{
-	width: 33%;
-	height: 31%;
+	width: 30%;
+	height: 70%;
 	float: left;
 	border: 1px solid #999999;
 	margin: 13px;
+	background-color: #fff;
+	box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
 }
 .book_show_box_right,
 .book_edit_box_right{
 	width: 60%;
-	height: 80%;
+	height: 90%;
 	float: right;
+	box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
 }
 .book_show_box3{
 	width: 75%;
@@ -189,4 +379,15 @@ input.books_new_top_url_submit{
 .book_edit_box3 input#book_url{
 	font-size: 20px;
 	border: 1px solid #999999;
+}
+.book_show_box4{
+	width: 75%;
+	margin: 0 auto;
+	text-align: center;
+}
+.book_show_comments{
+	background-color: #ffffff;
+	margin: 0 auto;
+	width: 80%;
+	height: 20%;
 }

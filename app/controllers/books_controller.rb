@@ -1,7 +1,9 @@
 class BooksController < ApplicationController
   def index
     # @user = User.find_by(id: current_user.id)
-    @books = Book.all.order(created_at: "DESC")
+    @books = Book.all.order(created_at: "DESC").limit(3)
+    @books1 = Book.all.order(article: "ASC")
+
   end
 
   def show
@@ -36,6 +38,9 @@ class BooksController < ApplicationController
   end
 
   def destroy
+    @book = Book.find(params:[:id])
+    @book.destroy
+    redirect_to book_path(@book.id)
   end
   private
   def book_params
