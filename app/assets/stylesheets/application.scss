@@ -147,6 +147,15 @@ header h3{
 /*NEWACCOUNT画面*/ /*SIGN IN画面*/
 .user_newaccount, .user_signin{
 	text-align: center;
+	height: 90%;
+}
+.field input#user_email{
+	width: 30%;
+	font-size: 20px;
+}
+.field input#user_password{
+	width: 30%;
+	font-size: 20px;
 }
 /*NEWACCOUNT画面 fin*/ /*SIGN IN画面 fin*/
 

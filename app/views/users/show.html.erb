@@ -1,6 +1,5 @@
 <div class="user_show_all">
 	<%= render 'users/userlist',user:@user %>
-	
 	<div class="user_show_right">
 		<div class="user_allbookmark">
 			<div class="user_title">
@@ -15,35 +14,27 @@
 						<a href="javascript:void(0);" class="javascript">JAVASCRIPT</a>
 						<a href="javascript:void(0);" class="github">GITHUB</a>
 					</div> -->
-					
-					
+
 					<div id="user_show_filterList">
 						<ul>
-							
 							<li>ARTICLE</li>
 							<li>URL</li>
 							<li>CATEGORY</li>
 							<li></li>
-							
-							
-
 						</ul>
 						<% @user.books.each do |book| %>
-						
 						<ul>
 							<%= link_to book_path(book.id) do %>
-							
 							<li><%= book.article %></li>
 							<li><%= text_url_to_link(h(book.url)).html_safe %></li>
 							<li><%= book.category %></li>
-							<li><%= link_to "削除", book_path(book.id), method: :delete,"data-confirm" => "本当に削除しますか?"  %></li>	
+							<% if @user == current_user %>
+							<li><%= link_to "削除", book_path(book.id), method: :delete,"data-confirm" => "本当に削除しますか?"  %></li>	<% end %>
 							<% end %>
 						</ul>
-						
 						<% end %>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</div>

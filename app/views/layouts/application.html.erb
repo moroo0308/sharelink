@@ -7,7 +7,9 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= favicon_link_tag('favicon.ico') %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./js/dist/zoomslider.css">
   </head>
 
   <body>
@@ -41,7 +43,7 @@
   </nav>
   <span id="back">
     <a href="#">
-      <img src="/images/arrow.png" alt="">
+      <%= image_tag 'arrow.png' %>
     </a>
   </span>
     <%= yield %>

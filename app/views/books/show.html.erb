@@ -28,8 +28,11 @@
 					<%= @book.user.name %>
 				</div>
 				<div class="book_show_box4">
+					<% if @user == current_user %>
 					<%= link_to "EDIT",edit_book_path(@book.id) %>
+					<% end %>
 					<%= link_to "BACK",books_path %>
+
 				</div>
 				
 			</div>
