@@ -1,31 +1,52 @@
-<div class="user_list_left">
-	<div class="user_list_profile">
-		<div class="user_list_userimage">
-			<%= attachment_image_tag user, :image,format: 'jpeg' , class: "user_list_userimage_class" %>
+<div class="user_show_left_t2">
+		<div class="user_show_box_t2">
+			<div class="user_show_image_name_t2">
+				<div class="user_show_image_t2">
+					<%= attachment_image_tag user, :image,format: 'jpeg' , fallback: "profile.png" ,class: "user_list_userimage_class" %>
+				</div>
+				<div class="user_show_name_t2">
+					<p><%= link_to user.name, user_path(user.id) %></p>
+				</div>
+			</div>
+			<div class="user_show_counts_box_t2">
+				<div class="user_show_bookmark_counts_t2">
+					<div class="user_show_count_t2">
+						<p><%=link_to user.books.count, user_path(user.id) %></p>
+					</div>
+					<div class="user_show_count_name_t2">
+						<p>ブックマーク</p>
+					</div>
+				</div>
+				<div class="user_show_bookmark_counts_t2">
+					<div class="user_show_count_t2">
+						<p><%=link_to user.favorites.count,"/users/#{user.id}/favorites"%></p>
+					</div>
+					<div class="user_show_count_name_t2">
+						<p>お気に入り</p>
+					</div>
+				</div>
+				<div class="user_show_bookmark_counts_t2">
+					<div class="user_show_count_t2">
+						
+					</div>
+					<div class="user_show_count_name_t2">
+						<p>お気に入られ</p>
+					</div>
+				</div>
+				
+			</div>
+			<div class="user_show_bookmark_share_t2">
+				<div class="user_show_new_t2">
+					<a class="user_show_button" href="/books/new" >ブックマークを追加する</a>
+				</div>
+			</div>
 		</div>
-		<div class="user_list_username">
-			<%=user.name%>
+		<div class="user_list_edit">
+			<div class="user_list_useredit">
+				<h4><%= link_to "EDIT", edit_user_path %></h4>
+			</div>
+			<div class="user_list_userdestroy">
+				<h4><%= link_to "LOGOUT" ,destroy_user_session_path, method: :delete%></h4>
+			</div>
 		</div>
 	</div>
-	<div class="user_list_count">
-		<div class="user_list_bookmarkcounts">
-			<h4>BOOKMARK</h4>
-			<h1><%=user.books.count%></h1>
-		</div>
-		<div class="user_list_favoritecounts">
-			<h4>FAVORITE</h4>
-			<h1><%= user.favorites.count %></h1>
-		</div>
-		<div class="user_list_favoritecounters">
-			<h4>FAVORITERS</h4>
-		</div>
-	</div>
-	<div class="user_list_edit">
-		<div class="user_list_useredit">
-			<h4><%= link_to "EDIT", edit_user_path %></h4>
-		</div>
-		<div class="user_list_userdestroy">
-			<h4><%= link_to "LOGOUT" ,destroy_user_session_path, method: :delete%></h4>
-		</div>
-	</div>
-</div>
