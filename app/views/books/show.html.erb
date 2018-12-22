@@ -1,41 +1,31 @@
-<div class="book_show_center">
-	<div class="book_show_box1">
-		<h1>BOOKMARK DETAIL</h1>
-	</div>
-	<div class="book_show_box2">
-		<h1>ブックマーク詳細</h1>
-	</div>
-	<div class="book_show_all">
-		<div class="book_show_leftright_box">
-			<div class="book_show_box_left">
-				<%= attachment_image_tag @book, :image,format: 'jpeg' %>
+<div class="book_show_center_t2">
+	<div class="book_show_box0_t2">
+		<div class="book_show_box1_t2">
+			<h1>BOOKMARK DETAIL</h1>
+		</div>
+		<div class="book_show_box2_t2">
+			<h1>ブックマーク詳細</h1>
+		</div>
+		<div class="book_show_box3_t2">
+			<div class="book_show_bookmark_detail_t2">
+				<div class="book_show_article_t2">
+					<h1><%= @book.article %></h1>
+				</div>
+				<div class="book_show_favorite_t2">
+					<p><%= @book.favorites.count %> users</p>
+				</div>
+				<div class="book_show_url_t2">
+					<p><%= text_url_to_link(h(@book.url)).html_safe %></p>
+				</div>
+				<div class="book_show_icon_t2">
+					<%= link_to "", edit_book_path(@book.id), class: "fas fa-edit" %>
+					<%= link_to "", book_path(@book.id),method: :delete,class: "fas fa-trash-alt" ,"data-confirm" => "本当に削除しますか？"%>
+				</div>
 			</div>
-			<div class="book_show_box_right">
-				<div class="book_show_box3">
-					<h3>ARICLE</h3>
-					<%= @book.article %>
-				</div>
-				<div class="book_show_box3">
-					<h3>CATEGORY</h3>
-					<p>カテゴリー</p>
-				</div>
-				<div class="book_show_box3">
-					<h3>URL</h3>
-					<%= text_url_to_link(h(@book.url)).html_safe %>
-				</div>
-				<div class="book_show_box3">
-					<h3>NAME</h3>
-					<%= @book.user.name %>
-				</div>
-				<div class="book_show_box4">
-					<%= link_to "EDIT",edit_book_path(@book.id) %>
-					<%= link_to "BACK",books_path %>
-				</div>
-				
+			<div class="book_show_bookmark_comment_t2">
+				<%= @book.comment %>
 			</div>
 		</div>
-		<div class="book_show_comments">
-			<%= @book.comment %>
-		</div>
+		<div class="book_show_box4_t2"></div>
 	</div>
 </div>

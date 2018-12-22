@@ -1,9 +1,31 @@
-<div class="books_index_body1">
+<div class="books_index_body1 js-section">
+	<div id = slideshow>
+		<div class="site_title">
+			<h1>Share Link</h1>
+		</div>
+		<div class="site_explanation">
+			<h2>Share Linkは、自分の好きなサイトをオンライン上で保存でき、<br>
+			他ユーザと共有ができるようになっております。</h2></br>
+		</div>
+		<p class="active">
+			<%= image_tag 'wil.jpg' %>
+
+		</p>
+		<p>
+			<%= image_tag 'tim.jpg' %>
+		</p>
+		<p>
+			<%= image_tag 'raw.jpg' %>
+		</p>
+		
+
+	</div>
 	<div class="books_index_pickup">
-		<h1>Share Link</h1>
+		
+
 	</div>
 </div>
-<div class="books_index_body2">
+<div class="books_index_body2 js-section">
 	<div class="books_index_allbookmark">
 		<div class="books_index_category">
 			<h1>新着記事</h1>
@@ -26,9 +48,12 @@
 					</div>
 				</div>
 				<div class="books_index_box_date_favorite">
-					<div class="books_index_box_date">2年前</div>
+					<div class="books_index_box_date">
+						<%= book.created_at.strftime('%Y/%m/%d') %>
+					</div>
 					<div class="books_index_box_favorite">
-						<% if Favorite.find_by(user_id:current_user.id,book_id:book.id) %>
+						
+						<% if Favorite.find_by(user_id:current_user,book_id:book.id) %>
 							<%= link_to("/favorites/#{book.id}/destroy",{method: "post"}) do %>
 							<span class="fa fa-heart like_btn_unlike"></span>
 							<% end %>
@@ -38,6 +63,7 @@
 							<% end %>
 						<% end %>
 						<span><%= book.favorites.count %></span>
+						
 					</div>
 				</div>
 				<div class="books_index_box_name_icon">
@@ -74,9 +100,12 @@
 					</div>
 				</div>
 				<div class="books_index_box_date_favorite">
-					<div class="books_index_box_date">2年前</div>
+					<div class="books_index_box_date">
+						<%= book.created_at.strftime('%Y/%m/%d') %>
+					</div>
 					<div class="books_index_box_favorite">
-						<% if Favorite.find_by(user_id:current_user.id,book_id:book.id) %>
+						
+						<% if Favorite.find_by(user_id:current_user,book_id:book.id) %>
 							<%= link_to("/favorites/#{book.id}/destroy",{method: "post"}) do %>
 							<span class="fa fa-heart like_btn_unlike"></span>
 							<% end %>
@@ -86,6 +115,7 @@
 							<% end %>
 						<% end %>
 						<span><%= book.favorites.count %></span>
+						
 					</div>
 				</div>
 				<div class="books_index_box_name_icon">
@@ -119,6 +149,8 @@
 		  </div><!-- /.wrapper -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+		<script type="text/javascript" src="./js/modernizr-custom.js"></script>
+		<script type="text/javascript" src="./js/dist/jquery.zoomslider.min.js"></script>
 	</div>
 	
 </div>

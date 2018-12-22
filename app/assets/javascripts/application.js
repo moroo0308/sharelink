@@ -81,6 +81,61 @@ $(function () {
 
 
 
+function slideSwitch() {
+   var $active = $('#slideshow p.active');
+
+   if ( $active.length == 0 ) $active = $('#slideshow p:last');
+
+   var $next =  $active.next().length ? $active.next()
+      : $('#slideshow p:first');
+
+   $active.addClass('last-active');
+
+   $next.css({opacity: 0.0})
+      .addClass('active')
+      .animate({opacity: 1.0}, 1000, function() {
+         $active.removeClass('active last-active');
+      });
+}
+
+$(function() {
+   setInterval( "slideSwitch()", 5000 );
+});
+
+
+
+
+$(function() {
+ 
+  $('#back a').on('click',function(){
+    $('body, html').animate({
+      scrollTop:0
+    }, 1500);
+      return false;
+  });
+ 
+});
+
+
+var option = {
+  section : '.js-section', // 対象を指定
+  easing: "swing", // イージングをしてい(jQueryのanimation)
+  scrollSpeed: 600, // スクロール時の速度
+  scrollbars: true, // スクロールバーを表示するか
+};
+
+$(function() {
+  $.scrollify(option); // scrollifyの実行
+});
+
+
+
+
+$(window).load(function(){
+  $('.loading').fadeOut();  
+});
+
+
 // $(function(){
 //   $('.like_btn').on('click',function(){
 //     var $likeBtn = $(this);

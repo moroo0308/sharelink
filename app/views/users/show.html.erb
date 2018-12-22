@@ -1,49 +1,37 @@
-<div class="user_show_all">
+<div class="user_show_all_t2">
 	<%= render 'users/userlist',user:@user %>
-	<div class="user_show_right">
-		<div class="user_allbookmark">
-			<div class="user_title">
-				<h3>BOOKMARK</h3>
+	<div class="user_show_right_t2">
+		<div class="user_show_right_box_t2">
+			<div class="user_show_title_t2">
+				<h3><%= @user.name %>のブックマーク(<%=@user.books.count%>)</h3>
 			</div>
-			<div class="user_bookmark">
-				<div class="user_bookmark_box">
-					<!-- <div id="user_show_filterbtn">
-						<a href="javascript:void(0);" class="allitem">All</a>
-						<a href="javascript:void(0);" class="htmlcss">HTML&CSS</a>
-						<a href="javascript:void(0);" class="rubyonrails">RUBY ON RAILS</a>
-						<a href="javascript:void(0);" class="javascript">JAVASCRIPT</a>
-						<a href="javascript:void(0);" class="github">GITHUB</a>
-					</div> -->
-					
-					
-					<div id="user_show_filterList">
-						<ul>
-							
-							<li>ARTICLE</li>
-							<li>URL</li>
-							<li>CATEGORY</li>
-							<li></li>
-							
-							
-
-						</ul>
-						<% @user.books.each do |book| %>
-						
-						<ul>
-							<%= link_to book_path(book.id) do %>
-							
-							<li><%= book.article %></li>
-							<li><%= text_url_to_link(h(book.url)).html_safe %></li>
-							<li><%= book.category %></li>
-							<li><%= link_to "削除", book_path(book.id), method: :delete,"data-confirm" => "本当に削除しますか?"  %></li>	
-							<% end %>
-						</ul>
-						
-						<% end %>
+			<div class="user_show_search_t2">
+				 <form>
+		        <input type="text" id="search-text" placeholder="検索ワードを入力">
+		      </form>
+			</div>
+			<%= @user.books.each do |book| %>
+			<div class="user_show_bookmark_box_t2">
+				<div class="user_show_bookmark_detail_t2">
+					<div class="user_show_bookmark_article_t2">
+						<h3><%=link_to book.article, book_path(book.id)%></h3>
+					</div>
+					<div class="user_show_bookmark_favorite_user_t2">
+						<p><%= book.favorites.count %> users</p>
+					</div>
+					<div class="user_show_bookmark_url_t2">
+						<p><%= text_url_to_link(h(book.url)).html_safe %></p>
+					</div>
+					<div class="user_show_bookmark_icon_t2">
+						<%= link_to "", edit_book_path(book.id), class: "fas fa-edit" %>
+						<%= link_to "", book_path(book.id),method: :delete,class: "fas fa-trash-alt" ,"data-confirm" => "本当に削除しますか？"%>
 					</div>
 				</div>
-
+				<div class="user_show_bookmark_comment_t2">
+					<p><%= book.comment %></p>
+				</div>
 			</div>
+			<% end %>
 		</div>
 	</div>
 </div>

@@ -1,32 +1,46 @@
-<div class="user_show_all">
+<div class="user_show_all_t2">
 	<%= render 'users/userlist',user:@user %>
-	<div class="user_show_right">
-		<div class="user_allbookmark">
-			<div class="user_title">
-				<h3>FAVORITE</h3>
+	<div class="user_show_right_t2">
+		<div class="user_show_right_box_t2">
+			<div class="user_show_title_t2">
+				<h3><%= @user.name %>のお気に入り(<%=@user.favorites.count%>)</h3>
 			</div>
-			<div class="user_favorite">
-				<div class="user_favorite_box">
-					<% @favorites.each do |favorite| %>
-					<% book = Book.find_by(id: favorite.book_id) %>
-					<div class="user_favorite_box1">
-						<%= link_to book_path(book.id) do %>
-						<div class="user_favorite_bookmarks_image">
-						</div>
-						<% end %>
-						<div class="user_favorite_article">
-							<p><%= book.category %></p>
-							<h3><%= book.article %></h3>
-						</div>
-						<div class="user_favorite_name">
-							<div class="user_favorite_date"></div>
-							<span>TEXT BY</span>
-							<a><%= book.user.name %></a>
-						</div>
+			<div class="user_show_search_t2">
+				 <form>
+		        <input type="text" id="search-text" placeholder="検索ワードを入力">
+		      </form>
+			</div>
+			<% @favorites.each do |favorite| %>
+			<% book = Book.find_by(id: favorite.book_id) %>
+			<div class="user_show_bookmark_box_t2">
+				<div class="user_show_bookmark_detail_t2">
+					<div class="user_show_bookmark_article_t2">
+						<h3><%=link_to book.article, book_path(book.id)%></h3>
 					</div>
-					<% end %>
+					<div class="user_show_bookmark_favorite_user_t2">
+						<p><%= book.favorites.count %> users</p>
+					</div>
+					<div class="user_show_bookmark_url_t2">
+						<p><%= text_url_to_link(h(book.url)).html_safe %></p>
+					</div>
+					<div class="user_show_bookmark_icon_t2">
+						<% if Favorite.find_by(user_id:current_user,book_id:book.id) %>
+							<%= link_to("/favorites/#{book.id}/destroy",{method: "post"}) do %>
+							<span class="fa fa-heart like_btn_unlike"></span>
+							<% end %>
+						<% else %>
+							<%= link_to("/favorites/#{book.id}/create",{method: "post"}) do %>
+							<span class="fa fa-heart like_btn"></span>
+							<% end %>
+						<% end %>
+						<!-- <span><%= book.favorites.count %></span> -->
+					</div>
+				</div>
+				<div class="user_show_bookmark_comment_t2">
+					<p><%= book.comment %></p>
 				</div>
 			</div>
+			<% end %>
 		</div>
 	</div>
 </div>
