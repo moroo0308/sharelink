@@ -1,6 +1,6 @@
 class Book < ApplicationRecord
 
-	enum category:{'一般':0,テクノロジー:1,アニメ:2}
+	enum category:{HTMLCSS: 0, RubyOnRails: 1, JacaScript: 2, GitHub: 3}
 
 	has_many :favorites,dependent: :destroy
 	has_many :book_comments,dependent: :destroy

@@ -17,27 +17,27 @@
 //= require jquery_ujs
 
 $(function(){
-var menu = $('#slide_menu'), //スライドインするメニューを指定
-	menuBtn = $('#button'),
-	body = $(document.body),
-	menuWidth = menu.outerWidth();  // 要素の外部の幅（borderとpaddingは含める）を取得します。(true)だったらmarginも含める。
 
-	menuBtn.on('click',function(){ //クリックした時、
-	body.toggleClass('open'); //bodyにopenクラスを付与する、toggleclass => 指定したclass'open'が要素に無ければ追加し、あれば削除する。
-		if(body.hasClass('open')){ //openクラスが body についてたら
-			body.animate({'left' : menuWidth}, 250); //メニューをスライドインする
-			menu.animate({'left' : 0 }, 250);
-		}else{
-			menu.animate({'left' : -menuWidth},250);  //ついてなかったらスライドアウトさせる
-			body.animate({'left' : 0 }, 250);
-		}
-	});
+  var menu = $('#slide_menu'), //スライドインするメニューを指定
+  menuBtn = $('#button'),
+  body = $(document.body),
+  menuWidth = menu.outerWidth();  // 要素の外部の幅（borderとpaddingは含める）を取得します。(true)だったらmarginも含める。
+
+  menuBtn.on('click',function(){ //クリックした時、
+  body.toggleClass('open'); //bodyにopenクラスを付与する、toggleclass => 指定したclass'open'が要素に無ければ追加し、あれば削除する。
+  	if(body.hasClass('open')){ //openクラスが body についてたら
+  		body.animate({'left' : menuWidth}, 250); //メニューをスライドインする
+  		menu.animate({'left' : 0 }, 250);
+  	}else{
+  		menu.animate({'left' : -menuWidth},250);  //ついてなかったらスライドアウトさせる
+  		body.animate({'left' : 0 }, 250);
+  	}
+  });
 	//スライドメニュー fin
 
 
 	//検索
-});
-$(function () {
+
   searchWord = function(){
     var searchResult,
         searchText = $(this).val(), // 検索ボックスに入力された
@@ -76,11 +76,61 @@ $(function () {
 
   // searchWordの実行
   $('#search-text').on('input', searchWord);
-});
 // 検索 fin
 
 
 
+
+
+
+
+
+
+
+
+//backボタン
+  $('#back a').on('click',function(){
+    $('body, html').animate({
+      scrollTop:0
+    }, 1500);
+      return false;
+  });
+
+
+
+// //自動スクロール
+// var option = {
+//   section : '.js-section', // 対象を指定
+//   easing: "swing", // イージングをしてい(jQueryのanimation)
+//   scrollSpeed: 600, // スクロール時の速度
+//   scrollbars: true, // スクロールバーを表示するか
+// };
+
+// $(function() {
+//   $.scrollify(option); // scrollifyの実行
+// });
+
+
+
+//load画面
+$(window).load(function(){
+  $('.loading').fadeOut();
+});
+
+
+//books_show コメント画面
+$('#book_show_tab_contents .tab[id !="tab1"]').hide();
+$('#book_show_tab-menu a').on('click', function(){
+  $("#book_show_tab_contents .tab").hide();
+  $("#book_show_tab-menu .active").removeClass("active");
+  $(this).addClass("active");
+  $($(this).attr("href")).show();
+  return false;
+});
+
+
+
+//books_indexの画像切り替わり
 function slideSwitch() {
    var $active = $('#slideshow p.active');
 
@@ -105,36 +155,10 @@ $(function() {
 
 
 
-$(function() {
- 
-  $('#back a').on('click',function(){
-    $('body, html').animate({
-      scrollTop:0
-    }, 1500);
-      return false;
-  });
- 
+
+
+
 });
-
-
-var option = {
-  section : '.js-section', // 対象を指定
-  easing: "swing", // イージングをしてい(jQueryのanimation)
-  scrollSpeed: 600, // スクロール時の速度
-  scrollbars: true, // スクロールバーを表示するか
-};
-
-$(function() {
-  $.scrollify(option); // scrollifyの実行
-});
-
-
-
-
-$(window).load(function(){
-  $('.loading').fadeOut();  
-});
-
 
 // $(function(){
 //   $('.like_btn').on('click',function(){

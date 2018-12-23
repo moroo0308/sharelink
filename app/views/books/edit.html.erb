@@ -1,37 +1,58 @@
-<div class="book_edit_center">
-	<div class="book_edit_box1">
-		<h1>BOOKMARK EDIT</h1>
-	</div>
-	<div class="book_edit_box2">
-		<h1>ブックマーク編集</h1>
-	</div>
-	<div class="book_edit_all">
-		
-		<div class="book_edit_box_left">
-			<%= attachment_image_tag @book, :image,format: 'jpeg' %>
+<div class="book_show_center_t2">
+	<div class="book_show_box0_t2">
+		<div class="book_show_box1_t2">
+			<h1>BOOKMARK EDIT</h1>
 		</div>
-		<%=form_for(@book) do |f| %>
-		<div class="book_edit_box_right">
-			<%= f.attachment_field :image %>
-			<div class="book_edit_box3">
-				<h3>ARTICLE</h3>
-				<%= f.text_field :article %>
-			</div>
-			<div class="book_edit_box3">
-				<h3>CATEGORY</h3>
-				<p>カテゴリー</p>
-			</div>
-			<div class="book_edit_box3">
-				<h3>URL</h3>
-				<%= f.text_field :url %>
-			</div>
-			<div class="book_edit_box3">
-				<h3>DATE</h3>
-				<%= @book.updated_at %>
-			</div>
-			<%= f.submit "保存" %>
-			<% end %>
-			<%= link_to "BACK",:back %>
+		<div class="book_show_box2_t2">
+			<h1>ブックマーク編集</h1>
 		</div>
+		<div class="book_show_box3_t2">
+			<div class="book_show_bookmark_detail_t2">
+				<%= form_for(@book) do |f| %>
+				<div class="book_show_article_t2">
+					<h1><%= f.text_field :article %></h1>
+				</div>
+				<div class="book_show_favorite_category_t2">
+					<div class="book_show_favorite_t2">
+						<p><%= @book.favorites.count %> users</p>
+					</div>
+					<div class="book_show_category_t2">
+						<h3><%= f.select :category, Book.categories.keys, :selected=>Book.categories[@book.category] %></h3>
+					</div>
+				</div>
+				<div class="book_edit_url_t2">
+					<p><%= f.text_field :url %></p>
+				</div>
+				<div class="book_show_icon_t2">
+					<%= link_to "", book_path(@book.id), class: "fas fa-backward"%>
+					<%= link_to "", book_path(@book.id),method: :delete,class: "fas fa-trash-alt" ,"data-confirm" => "本当に削除しますか？"%>
+				</div>
+				
+			</div>
+			<div class="book_edit_bookmark_comment_t2">
+				<div class="book_show_user_image_name_t2">
+					<div class="book_show_user_image_t2">
+						<%= attachment_image_tag @book.user, :image,format: 'jpeg',fallback: "profile.png" %>
+					</div>
+					<div class="book_show_user_name_date_t2">
+						<div class="book_show_user_name_t2">
+							<p><%= @book.user.name %></p>
+						</div>
+						<div class="book_show_user_date_t2">
+							<p><%= @book.created_at.strftime('%Y/%m/%d') %></p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="book_show_user_comment_t2">
+					<p><%= f.text_area :comment %></p>
+				</div>
+				
+			</div>
+		</div>
+		<div class="book_edit_box4_t2">
+			<%= f.submit "アップデート" %>
+		</div>
+		<% end %>
 	</div>
 </div>
