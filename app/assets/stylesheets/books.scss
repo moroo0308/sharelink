@@ -146,6 +146,9 @@ img.attachment.book.image{
 	border-radius: 5px;
 	box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
 }
+.books_index_box h3{
+	color: #068b71;
+}
 .books_index_box2{
 	width: 20%;
 	height: 30%;
@@ -157,13 +160,18 @@ img.attachment.book.image{
 	overflow: hidden;
 	box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
 }
+.books_index_box2 h3{
+	color: #068b71;
+}
 .books_index_box_image{
 	width: 100%;
 	height: 50%;
 	border-bottom:1px solid #999999;
+	padding: 50px 30px;
 }
 .books_index_box_image:hover{
-	opacity: 0.5;
+	/*opacity: 0.5;*/
+	color: red
 }
 .books_index_box_image img.attachment.book.image{
 	width: 100%;
@@ -177,6 +185,7 @@ img.attachment.book.image{
 .books_index_box_category{
 	width: 100%;
 	height: 20%;
+	font-size: 20px;
 	/*border:1px solid #999999;*/
 }
 .books_index_box_article{
@@ -319,6 +328,7 @@ img.attachment.book.image{
 }
 .books_new_top_url select#book_category {
 	font-size: 20px;
+	border:1px solid #999999;
 }
 .books_new_top_url_submit{
 
@@ -460,6 +470,10 @@ input.books_new_top_url_submit{
 
 
 
+
+
+
+
 .book_show_center_t2{
 	width: 100%;
 	height: 100%;
@@ -494,7 +508,7 @@ input.books_new_top_url_submit{
 
 .book_show_box3_t2{
 	width: 100%;
-	height: 40%;
+	height: 35%;
 	border-bottom: 1px solid #999999;
 
 }
@@ -508,11 +522,34 @@ input.books_new_top_url_submit{
 	height: 40%;
 	padding: 40px;
 }
-.book_show_favorite_t2{
+.book_show_article_t2 input#book_article{
+	font-size: 30px;
+	border:2px solid #333;
+	width: 100%;
+	color: #999999;
+}
+.book_show_favorite_category_t2{
 	width: 94%;
 	height: 20%;
 	margin: 0 auto;
+}
+.book_show_favorite_t2{
+	width: 20%;
+	height: 100%;
+	margin: 0 auto;
 	color: #f94e5b;
+	float: left;
+}
+.book_show_category_t2{
+	width: 30%;
+	height: 100%;
+	float: left;
+	color: #068b71;
+}
+.book_show_category_t2 select#book_category{
+	font-size: 16px;
+	border:2px solid #333;
+	color: #999999;
 }
 .book_show_url_t2{
 	width: 100%;
@@ -528,19 +565,180 @@ input.books_new_top_url_submit{
 	padding-right:25px;
 }
 .book_show_bookmark_comment_t2{
-	width: 95%;
-	height: 30%;
+	width: 100%;
+	height: 35%;
 	margin: 0 auto;
-	padding:5px 25px;
+	/*padding:5px 25px;*/
 	border:1px solid;
 	background-color: #ebf2fa;
 }
+.book_show_user_image_name_t2{
+	width: 25%;
+	height: 100%;
+	/*border: 1px solid;*/
+	float: left;
+}
+.book_show_user_image_t2{
+	width: 40%;
+	height: 100%;
+	/*border:1px solid;*/
+	float: left;
+}
+.book_show_user_image_t2 img.attachment.user.image{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.book_show_user_name_date_t2{
+	width: 60%;
+	height: 100%;
+	/*border:1px solid;*/
+	float: left;
+}
+.book_show_user_name_t2{
+	width: 100%;
+	height: 50%;
+}
+.book_show_user_name_t2 p{
+	padding: 20px;
+}
+.book_show_user_date_t2{
+	width: 100%;
+	height: 50%;
+}
+.book_show_user_date_t2 p{
+	padding:20px;
+}
+.book_show_user_comment_t2{
+	width: 75%;
+	height: 100%;
+	float: left;
+	padding-top: 20px;
+}
+.book_show_user_comment_t2 textarea#book_comment{
+	width: 75%;
+	height: 80px;
+	font-size: 15px;
+}
 .book_show_box4_t2{
 	width: 100%;
-	height: 40%;
+	height: 50%;
+	border:1px solid;
+}
+.book_show_comment_detail_t2{
+	width: 100%;
+	max-width: 100%;
+	margin: 0 auto;
+	/*border: 1px solid;*/
+}
+.book_show_comment_detail_t2 li{
+	float: left;
+	list-style-type: none;
+	width: 20%;
+}
+#book_show_tab-menu a{
+	display: block;
+	text-align: center;
+	background-color: #000;
+	padding: 20px;
+	height: 100%;
+	border:1px solid #000;
+	color: #fff;
+	border-bottom: none;
+}
+#book_show_tab-menu .active{
+	background:#fff;
+	color: #000;
+}
+#book_show_tab_contents{
+	height: 70%;
+	border:1px solid;
+}
+#book_show_tab_contents .tab{
+	border:1px solid #000;
+	border-top: none;
+	background-color: #fff;
+	/*padding: 30px;*/
+	height: 30%;
+}
+#book_show_tab_contents p{
+	line-height: 2.5;
+	color: #000;
+}
+
+.book_show_comment_image_t2{
+	width: 5%;
+	height: 100%;
+	border: 1px solid;
+	float: left;
+}
+.book_show_comment_t2{
+	width: 95%;
+	height: 100%;
+	float: left;
+}
+.book_show_comment_name_t2{
+	width: 100%;
+	height: 25%;
+	border:1px solid;
+}
+.book_show_comment_box_t2{
+	width: 100%;
+	height: 75%;
+	border:1px solid;
+}
+.book_show_comment_detail_box_t2{
+	width: 100%;
+	height: 70%;
+	border:1px solid;
+}
+.book_show_comment_date_t2{
+	width: 100%;
+	border:1px solid;
+	height: 30%;
+}
+.book_show_comment_text_t2{
+	width: 100%;
+	height: 19%;
 	border:1px solid;
 }
 
+
+
+
+
+.book_edit_url_t2{
+	/*width: 100%;*/
+	height: 20%;
+	padding: 5px 25px;
+	text-decoration: underline;
+	margin: 40px;
+}
+.book_edit_url_t2 input#book_url{
+	font-size: 20px;
+	border:2px solid #333;
+	width: 100%;
+	color: #999999;
+}
+.book_edit_bookmark_comment_t2{
+	width: 100%;
+	height: 35%;
+	margin: 0px auto;
+	/*padding:5px 25px;*/
+	border:1px solid;
+	background-color: #ebf2fa;
+}
+.book_edit_box4_t2{
+	width: 100%;
+	height: 10%;
+	/*border:1px solid;*/
+	text-align: center;
+}
+.book_edit_box4_t2 input[type="submit"]{
+	border:2px solid #333;
+	font-size: 20px;
+	margin-top: 20px;
+}
 
 
 

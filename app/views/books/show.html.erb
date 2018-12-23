@@ -9,10 +9,15 @@
 		<div class="book_show_box3_t2">
 			<div class="book_show_bookmark_detail_t2">
 				<div class="book_show_article_t2">
-					<h1><%= @book.article %></h1>
+					<h2><%= @book.article %></h2>
 				</div>
-				<div class="book_show_favorite_t2">
-					<p><%= @book.favorites.count %> users</p>
+				<div class="book_show_favorite_category_t2">
+					<div class="book_show_favorite_t2">
+						<p><%= @book.favorites.count %> users</p>
+					</div>
+					<div class="book_show_category_t2">
+						<h3><%= @book.category %></h3>
+					</div>
 				</div>
 				<div class="book_show_url_t2">
 					<p><%= text_url_to_link(h(@book.url)).html_safe %></p>
@@ -23,9 +28,47 @@
 				</div>
 			</div>
 			<div class="book_show_bookmark_comment_t2">
-				<%= @book.comment %>
+				<div class="book_show_user_image_name_t2">
+					<div class="book_show_user_image_t2">
+						<%= attachment_image_tag @book.user, :image,format: 'jpeg',fallback: "profile.png" %>
+					</div>
+					<div class="book_show_user_name_date_t2">
+						<div class="book_show_user_name_t2">
+							<p><%= @book.user.name %></p>
+						</div>
+						<div class="book_show_user_date_t2">
+							<p><%= @book.created_at.strftime('%Y/%m/%d') %></p>
+						</div>
+					</div>
+				</div>
+				<div class="book_show_user_comment_t2">
+					<p><%= @book.comment %></p>
+				</div>
 			</div>
 		</div>
-		<div class="book_show_box4_t2"></div>
+		<div class="book_show_box4_t2">
+			<div class="book_show_comment_detail_t2">
+				<ul id= "book_show_tab-menu" class="clearfix">
+					<li><a href="#tab1" class="active">人気のコメント</a></li>
+					<li><a href="#tab2" class="">全てのコメント</a></li>
+				</ul>
+			</div>
+			<div id="book_show_tab_contents" class="clearfix">
+				<div id="tab1" class="tab">
+					<p>tab1</p>
+				</div>
+				<div id="tab2" class="tab">
+					<div class="book_show_comment_image_t2"></div>
+					<div class="book_show_comment_t2">
+						<div class="book_show_comment_name_t2"></div>
+						<div class="book_show_comment_box_t2">
+							<div class="book_show_comment_detail_box_t2"></div>
+							<div class="book_show_comment_date_t2"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="book_show_comment_text_t2"></div>
+		</div>
 	</div>
 </div>

@@ -4,12 +4,11 @@
 			<h1>Share Link</h1>
 		</div>
 		<div class="site_explanation">
-			<h2>Share Linkは、自分の好きなサイトをオンライン上で保存でき、<br>
+			<h2>Share Linkは、参考にしたサイトをオンライン上で保存でき、<br>
 			他ユーザと共有ができるようになっております。</h2></br>
 		</div>
 		<p class="active">
 			<%= image_tag 'wil.jpg' %>
-
 		</p>
 		<p>
 			<%= image_tag 'tim.jpg' %>
@@ -33,17 +32,17 @@
 		<div class="books_index_bookmarks">
 			<% @books.each do |book| %>
 			<div class="books_index_box">
+				<h3><%= book.category %></h3>
 				<%= link_to book_path(book.id) do %>
 				<div class="books_index_box_image">
-					<%= attachment_image_tag book, :image,format: 'jpeg' %>
+
+					<h2><%= book.article %></h2>
 				</div>
 				<% end %>
 				<div class="books_index_box_category_article">
 					<div class="books_index_box_category">
-						<p><%= book.category %></p>
 					</div>
 					<div class="books_index_box_article">
-						<p><%= book.article %></p>
 						<p><%= text_url_to_link(book.url).html_safe %></p>
 					</div>
 				</div>
@@ -52,7 +51,6 @@
 						<%= book.created_at.strftime('%Y/%m/%d') %>
 					</div>
 					<div class="books_index_box_favorite">
-						
 						<% if Favorite.find_by(user_id:current_user,book_id:book.id) %>
 							<%= link_to("/favorites/#{book.id}/destroy",{method: "post"}) do %>
 							<span class="fa fa-heart like_btn_unlike"></span>
@@ -63,7 +61,6 @@
 							<% end %>
 						<% end %>
 						<span><%= book.favorites.count %></span>
-						
 					</div>
 				</div>
 				<div class="books_index_box_name_icon">
@@ -85,17 +82,16 @@
 		<div class="books_index_bookmarks2">
 			<% @books1.each do |book| %>
 			<div class="books_index_box2">
+				<h3><%= book.category %></h3>
 				<%= link_to book_path(book.id) do %>
 				<div class="books_index_box_image">
-					<%= attachment_image_tag book, :image,format: 'jpeg' %>
+					<h2><%= book.article %></h2>
 				</div>
 				<% end %>
 				<div class="books_index_box_category_article">
 					<div class="books_index_box_category">
-						<p><%= book.category %></p>
 					</div>
 					<div class="books_index_box_article">
-						<p><%= book.article %></p>
 						<p><%= text_url_to_link(book.url).html_safe %></p>
 					</div>
 				</div>
@@ -104,7 +100,6 @@
 						<%= book.created_at.strftime('%Y/%m/%d') %>
 					</div>
 					<div class="books_index_box_favorite">
-						
 						<% if Favorite.find_by(user_id:current_user,book_id:book.id) %>
 							<%= link_to("/favorites/#{book.id}/destroy",{method: "post"}) do %>
 							<span class="fa fa-heart like_btn_unlike"></span>
@@ -154,3 +149,4 @@
 	</div>
 	
 </div>
+ <script type="text/javascript" src="js/books_show.js"></script>
