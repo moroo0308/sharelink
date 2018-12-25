@@ -3,6 +3,7 @@ class BooksController < ApplicationController
     # @user = User.find_by(id: current_user.id)
     @books = Book.all.order(created_at: "DESC").limit(3)
     @books1 = Book.all.order(article: "ASC")
+    @rank = Book.find(Favorite.group(:book_id).order('count(book_id) desc').limit(5).pluck(:book_id))
 
   end
 
@@ -10,7 +11,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @user= @book.user
     @favoritescount = Favorite.where(book_id:@book.id).count
-    
+    @bookcomment = BookComment.new
   end
 
   def new
@@ -43,6 +44,7 @@ class BooksController < ApplicationController
     @book.destroy
     redirect_to user_path(@book.user.id)
   end
+
   private
   def book_params
     params.require(:book).permit(:article,:url,:comment,:image,:category)

@@ -5,11 +5,11 @@
 			<div class="user_show_title_t2">
 				<h3><%= @user.name %>のお気に入り(<%=@user.favorites.count%>)</h3>
 			</div>
-			<div class="user_show_search_t2">
+			<!-- <div class="user_show_search_t2">
 				 <form>
 		        <input type="text" id="search-text" placeholder="検索ワードを入力">
 		      </form>
-			</div>
+			</div> -->
 			<% @favorites.each do |favorite| %>
 			<% book = Book.find_by(id: favorite.book_id) %>
 			<div class="user_show_bookmark_box_t2">

@@ -16,12 +16,8 @@
 		<p>
 			<%= image_tag 'raw.jpg' %>
 		</p>
-		
-
 	</div>
 	<div class="books_index_pickup">
-		
-
 	</div>
 </div>
 <div class="books_index_body2 js-section">
@@ -35,7 +31,6 @@
 				<h3><%= book.category %></h3>
 				<%= link_to book_path(book.id) do %>
 				<div class="books_index_box_image">
-
 					<h2><%= book.article %></h2>
 				</div>
 				<% end %>
@@ -69,7 +64,7 @@
 					</div>
 					<%= link_to user_path(book.user.id) do %>
 					<div class="books_index_box_icon">
-						<%= attachment_image_tag book.user, :image,format: 'jpeg'%>
+						<%= attachment_image_tag book.user, :image,format: 'jpeg',fallback: "profile.png"%>
 					</div>
 					<% end %>
 				</div>
@@ -78,75 +73,64 @@
 		</div>
 		<div class="books_index_category">
 			<h1>全てのブックマークサイト</h1>
+			<ul id="books_index_tab-menu" class="clearfix">
+				<li><a href="#tab1" class="active">ALL</a></li>
+				<li><a href="#tab2" class="">HTML&CSS</a></li>
+				<li><a href="#tab3" class="">RubyOnRails</a></li>
+				<li><a href="#tab4" class="">JavaScript</a></li>
+				<li><a href="#tab5" class="">GitHub</a></li>
+			</ul>
 		</div>
-		<div class="books_index_bookmarks2">
-			<% @books1.each do |book| %>
-			<div class="books_index_box2">
-				<h3><%= book.category %></h3>
-				<%= link_to book_path(book.id) do %>
-				<div class="books_index_box_image">
-					<h2><%= book.article %></h2>
-				</div>
-				<% end %>
-				<div class="books_index_box_category_article">
-					<div class="books_index_box_category">
-					</div>
-					<div class="books_index_box_article">
-						<p><%= text_url_to_link(book.url).html_safe %></p>
-					</div>
-				</div>
-				<div class="books_index_box_date_favorite">
-					<div class="books_index_box_date">
-						<%= book.created_at.strftime('%Y/%m/%d') %>
-					</div>
-					<div class="books_index_box_favorite">
-						<% if Favorite.find_by(user_id:current_user,book_id:book.id) %>
-							<%= link_to("/favorites/#{book.id}/destroy",{method: "post"}) do %>
-							<span class="fa fa-heart like_btn_unlike"></span>
-							<% end %>
-						<% else %>
-							<%= link_to("/favorites/#{book.id}/create",{method: "post"}) do %>
-							<span class="fa fa-heart like_btn"></span>
-							<% end %>
-						<% end %>
-						<span><%= book.favorites.count %></span>
-						
+		<div id="books_index_bookmarks2_tab-contents" class="clearfix">
+			<div id="tab1" class="tab">
+				
+			</div>
+			<div id="tab2" class="tab"></div>
+			<div id="tab3" class="tab"></div>
+			<div id="tab4" class="tab"></div>
+			<div id="tab5" class="tab"></div>
+		</div>
+	</div>
+	<div class="books_index_right">
+		<div class="books_index_ranking_title">
+			<h1>お気に入り数ランキング</h1>
+		</div>
+		<div class="books_index_ranking_all">
+			<% @rank.each.with_index(1) do |rank, i| %>
+			<div class="books_index_ranking_box">
+				<div class="books_index_rank_count">
+					<div class="books_index_rankcount">
+						<h2><%= "#{i}" %></h2>
 					</div>
 				</div>
-				<div class="books_index_box_name_icon">
-					<div class="books_index_box_name">
-						<p>TEXT BY<%= link_to book.user.name, user_path(book.user.id) %></p>
+				<div class="books_index_ranking_detail">
+					<div class="books_index_date">
+						<p><%= rank.created_at.strftime('%Y/%m/%d') %></p>
 					</div>
-					<%= link_to user_path(book.user.id) do %>
-					<div class="books_index_box_icon">
-						<%= attachment_image_tag book.user, :image,format: 'jpeg'%>
+					<%= link_to book_path(rank.id) do %>
+					<div class="books_index_article">
+						<h3><%= rank.article %></h3>
 					</div>
 					<% end %>
+					<div class="books_index_category_favorite">
+						<div class="books_index_ranking_category">
+							<h3><%= rank.category %></h3>
+						</div>
+						<div class="books_index_favorite_count">
+							<p><%= rank.favorites.count %> users</p>
+						</div>
+					</div>
 				</div>
 			</div>
 			<% end %>
 		</div>
-	</div>
-	<div class="books_index_search">
-		<h1>検索</h1>
-		  <div class="wrapper">
-		    <div class="search-area">
-		      <form>
-		        <input type="text" id="search-text" placeholder="検索ワードを入力">
-		      </form>
-		      <div class="search-result">
-		        <div class="search-result__hit-num"></div>
-		        <div id="search-result__list"></div>
-		      </div>
-		    </div>
+		
+		
 
-		    
-		  </div><!-- /.wrapper -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-		<script type="text/javascript" src="./js/modernizr-custom.js"></script>
-		<script type="text/javascript" src="./js/dist/jquery.zoomslider.min.js"></script>
 	</div>
-	
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script type="text/javascript" src="./js/modernizr-custom.js"></script>
+<script type="text/javascript" src="./js/dist/jquery.zoomslider.min.js"></script>
  <script type="text/javascript" src="js/books_show.js"></script>

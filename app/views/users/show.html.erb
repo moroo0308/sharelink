@@ -5,11 +5,11 @@
 			<div class="user_show_title_t2">
 				<h3><%= @user.name %>のブックマーク(<%=@user.books.count%>)</h3>
 			</div>
-			<div class="user_show_search_t2">
+			<!-- <div class="user_show_search_t2">
 				 <form>
 		        <input type="text" id="search-text" placeholder="検索ワードを入力">
 		      </form>
-			</div>
+			</div> -->
 			<%= @user.books.each do |book| %>
 			<div class="user_show_bookmark_box_t2">
 				<div class="user_show_bookmark_detail_t2">
