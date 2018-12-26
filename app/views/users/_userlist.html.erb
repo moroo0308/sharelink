@@ -6,6 +6,7 @@
 				</div>
 				<div class="user_show_name_t2">
 					<p><%= link_to user.name, user_path(user.id) %></p>
+					<%= link_to "",edit_user_path, class: "fas fa-user-edit" %>
 				</div>
 			</div>
 			<div class="user_show_counts_box_t2">
@@ -25,15 +26,13 @@
 						<p>お気に入り</p>
 					</div>
 				</div>
-				<div class="user_show_bookmark_counts_t2">
+				<!-- <div class="user_show_bookmark_counts_t2">
 					<div class="user_show_count_t2">
-						
 					</div>
 					<div class="user_show_count_name_t2">
 						<p>お気に入られ</p>
 					</div>
-				</div>
-				
+				</div> -->
 			</div>
 			<div class="user_show_bookmark_share_t2">
 				<div class="user_show_new_t2">
@@ -42,11 +41,6 @@
 			</div>
 		</div>
 		<div class="user_list_edit">
-			<div class="user_list_useredit">
-				<h4><%= link_to "EDIT", edit_user_path %></h4>
-			</div>
-			<div class="user_list_userdestroy">
-				<h4><%= link_to "LOGOUT" ,destroy_user_session_path, method: :delete%></h4>
-			</div>
+			
 		</div>
 	</div>

@@ -1,6 +1,7 @@
+<% @book.errors.full_messages.each do |message| %>
+ <%= message %>
+<% end %>
 <div class="notice">
-	<%if flash[:notice] %>
-	<% end %>
 </div>
 <div class="books_new_body">
 	<div class="books_new_top">

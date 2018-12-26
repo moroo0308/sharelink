@@ -99,27 +99,7 @@ $(function(){
 
 
 
-//books_indexカテゴリ切り替え
 
-$('#books_index_bookmarks2_tab-contents .tab[id !="tab1"]').hide();
-$('#books_index_tab-menu a').on('click',function(){
-  $('#books_index_bookmarks2_tab-contents .tab').hide();
-  $("#books_index_tab-menu .active").removeClass("active");
-  $(this).addClass("active");
-  $($(this).attr("href")).show();
-  return false;
-});
-
-
-
-
-
-
-
-
-
-
-//books_indexカテゴリ切り替え　fin
 
 //user_show検索 fin
 
@@ -165,6 +145,10 @@ $('#book_show_tab-menu a').on('click', function(){
 
 
 
+
+
+
+
 //books_indexの画像切り替わり
 function slideSwitch() {
    var $active = $('#slideshow p.active');
@@ -189,11 +173,24 @@ $(function() {
 
 
 
+//books_indexカテゴリ切り替え
 
+$('#books_index_bookmarks2 .index_tab[id != "tab1"]').hide();
+ 
+$('#books_index_tab-menu a').on('click', function() {
+  $("#books_index_bookmarks2 .index_tab").hide();
+  $("#books_index_tab-menu .active").removeClass("active");
+  $(this).addClass("active");
+  $($(this).attr("href")).show();
+  return false;
+});
+
+//books_indexカテゴリ切り替え　fin
 
 
 
 });
+
 
 // $(function(){
 //   $('.like_btn').on('click',function(){
