@@ -38,55 +38,70 @@ $(function(){
 
 	//検索
 
-  searchWord = function(){
-    var searchResult,
-        searchText = $(this).val(), // 検索ボックスに入力された
-        targetText,
-        hitNum;
+//   searchWord = function(){
+//     var searchResult,
+//         searchText = $(this).val(), // 検索ボックスに入力された
+//         targetText,
+//         hitNum;
 
-    // 検索結果を格納するための配列を用意
-    searchResult = [];
+//     // 検索結果を格納するための配列を用意
+//     searchResult = [];
 
-    // 検索結果エリアの表示を空にする
-    $('#search-result__list').empty();
-    $('.search-result__hit-num').empty();
+//     // 検索結果エリアの表示を空にする
+//     $('#search-result__list').empty();
+//     $('.search-result__hit-num').empty();
 
-    // 検索ボックスに値が入ってる場合
-    if (searchText != '') {
-      $('.books_index_box_article').each(function() {
-        targetText = $(this).text();
+//     // 検索ボックスに値が入ってる場合
+//     if (searchText != '') {
+//       $('.books_index_box_article').each(function() {
+//         targetText = $(this).text();
 
-        // 検索対象となるリストに入力された文字列が存在するかどうかを判断
-        if (targetText.indexOf(searchText) != -1) {
-          // 存在する場合はそのリストのテキストを用意した配列に格納
-          searchResult.push(targetText);
-        }
-      });
+//         // 検索対象となるリストに入力された文字列が存在するかどうかを判断
+//         if (targetText.indexOf(searchText) != -1) {
+//           // 存在する場合はそのリストのテキストを用意した配列に格納
+//           searchResult.push(targetText);
+//         }
+//       });
 
-      // 検索結果をページに出力
-      for (var i = 0; i < searchResult.length; i ++) {
-        $('<ul>').text(searchResult[i]).appendTo('#search-result__list');
-      }
+//       // 検索結果をページに出力
+//       for (var i = 0; i < searchResult.length; i ++) {
+//         $('<ul>').text(searchResult[i]).appendTo('#search-result__list');
+//       }
 
-      // ヒットの件数をページに出力
-      hitNum = '<span>検索結果</span>：' + searchResult.length + '件見つかりました。';
-      $('.search-result__hit-num').append(hitNum);
-    }
-  };
+//       // ヒットの件数をページに出力
+//       hitNum = '<span>検索結果</span>：' + searchResult.length + '件見つかりました。';
+//       $('.search-result__hit-num').append(hitNum);
+//     }
+//   };
 
-  // searchWordの実行
-  $('#search-text').on('input', searchWord);
-// 検索 fin
-
-
+//   // searchWordの実行
+//   $('#search-text').on('input', searchWord);
+// // 検索 fin
 
 
+//user_show検索画面
+
+// searchWord = function(){
+//   var searchText = $(this).val(),
+//       targetText;
+
+//       $('.user_show_bookmark_box_t2 h3').each(function(){
+//         targetText = $(this).text();
+
+//         if (targetText.indexOf(searchText)!= -1){
+//           $(this).removeClass('hidden');
+//         }else{
+//           $(this).addClass('hidden');
+//         }
+//       });
+//   };
+//   $('#search-text').on('input',searchWord);
 
 
 
 
 
-
+//user_show検索 fin
 
 //backボタン
   $('#back a').on('click',function(){
@@ -130,6 +145,10 @@ $('#book_show_tab-menu a').on('click', function(){
 
 
 
+
+
+
+
 //books_indexの画像切り替わり
 function slideSwitch() {
    var $active = $('#slideshow p.active');
@@ -154,11 +173,24 @@ $(function() {
 
 
 
+//books_indexカテゴリ切り替え
 
+$('#books_index_bookmarks2 .index_tab[id != "tab1"]').hide();
+ 
+$('#books_index_tab-menu a').on('click', function() {
+  $("#books_index_bookmarks2 .index_tab").hide();
+  $("#books_index_tab-menu .active").removeClass("active");
+  $(this).addClass("active");
+  $($(this).attr("href")).show();
+  return false;
+});
+
+//books_indexカテゴリ切り替え　fin
 
 
 
 });
+
 
 // $(function(){
 //   $('.like_btn').on('click',function(){

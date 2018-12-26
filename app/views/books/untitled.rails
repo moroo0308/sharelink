@@ -1,0 +1,38 @@
+<% @books1.each do |all| %>
+			<div id="tab1" class="tab">
+				<div class="books_index_bookmark_article_t2">
+					<h3><%= all.category %></h3>
+					<%= link_to book_path(all.id) do %>
+					<h2><%= all.article %></h2>
+					<% end %>
+				</div>
+				<div class="books_index_bookmark_url_t2">
+					<p><%= text_url_to_link(all.url).html_safe %></p>
+				</div>
+				<div class="books_index_bookmark_date_favorite_t2">
+					<div class="books_index_bookmark_date_t2">
+						<%= all.created_at.strftime('%Y/%m/%d') %>
+					</div>
+					<div class="books_index_bookmark_favorite_t2">
+						<% if Favorite.find_by(user_id:current_user,book_id:all.id) %>
+							<%= link_to("/favorites/#{all.id}/destroy",{method: "post"}) do %>
+							<span class="fa fa-heart like_btn_unlike"></span>
+							<% end %>
+						<% else %>
+							<%= link_to("/favorites/#{all.id}/create",{method: "post"}) do %>
+							<span class="fa fa-heart like_btn"></span>
+							<% end %>
+						<% end %>
+						<span><%= all.favorites.count %></span>
+					</div>
+				</div>
+				<div class="books_index_bookmark_name_icon_t2">
+					<div class="books_index_bookmark_name_t2">
+						<p>TEXT BY<%= link_to all.user.name, user_path(all.user.id) %></p>
+					</div>
+					<div class="books_index_bookmark_icon_t2">
+						<%= attachment_image_tag all.user, :image,format: 'jpeg',fallback: "profile.png"%>
+					</div>
+				</div>
+			</div>
+			<% end %>

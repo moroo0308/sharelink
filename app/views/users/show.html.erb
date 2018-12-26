@@ -1,3 +1,10 @@
+<div class="notice">
+	<%if flash[:notice] %>
+	<div class="flash">
+		<%= flash[:notice] %>
+	</div>
+	<% end %>
+</div>
 <div class="user_show_all_t2">
 	<%= render 'users/userlist',user:@user %>
 	<div class="user_show_right_t2">
@@ -5,12 +12,12 @@
 			<div class="user_show_title_t2">
 				<h3><%= @user.name %>のブックマーク(<%=@user.books.count%>)</h3>
 			</div>
-			<div class="user_show_search_t2">
+			<!-- <div class="user_show_search_t2">
 				 <form>
 		        <input type="text" id="search-text" placeholder="検索ワードを入力">
 		      </form>
-			</div>
-			<%= @user.books.each do |book| %>
+			</div> -->
+			<% @user.books.each do |book| %>
 			<div class="user_show_bookmark_box_t2">
 				<div class="user_show_bookmark_detail_t2">
 					<div class="user_show_bookmark_article_t2">
@@ -23,8 +30,10 @@
 						<p><%= text_url_to_link(h(book.url)).html_safe %></p>
 					</div>
 					<div class="user_show_bookmark_icon_t2">
+						<% if book.user.id == current_user.id %>
 						<%= link_to "", edit_book_path(book.id), class: "fas fa-edit" %>
 						<%= link_to "", book_path(book.id),method: :delete,class: "fas fa-trash-alt" ,"data-confirm" => "本当に削除しますか？"%>
+						<% end %>
 					</div>
 				</div>
 				<div class="user_show_bookmark_comment_t2">

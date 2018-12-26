@@ -27,4 +27,7 @@ class User < ApplicationRecord
         def following?(other_user)
         	following.Include?(other_user)
         end
+
+        validates :name,:email,:password,:password_confirmation,{presence: true}
+        validates :password,length:{minimum:6}
 end

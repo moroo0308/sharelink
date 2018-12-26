@@ -1,3 +1,10 @@
+<div class="notice">
+	<%if flash[:notice] %>
+	<div class="flash">
+		<%= flash[:notice] %>
+	</div>
+	<% end %>
+</div>
 <div class="books_index_body1 js-section">
 	<div id = slideshow>
 		<div class="site_title">
@@ -16,12 +23,8 @@
 		<p>
 			<%= image_tag 'raw.jpg' %>
 		</p>
-		
-
 	</div>
 	<div class="books_index_pickup">
-		
-
 	</div>
 </div>
 <div class="books_index_body2 js-section">
@@ -35,7 +38,6 @@
 				<h3><%= book.category %></h3>
 				<%= link_to book_path(book.id) do %>
 				<div class="books_index_box_image">
-
 					<h2><%= book.article %></h2>
 				</div>
 				<% end %>
@@ -69,84 +71,278 @@
 					</div>
 					<%= link_to user_path(book.user.id) do %>
 					<div class="books_index_box_icon">
-						<%= attachment_image_tag book.user, :image,format: 'jpeg'%>
+						<%= attachment_image_tag book.user, :image,format: 'jpeg',fallback: "profile.png"%>
 					</div>
 					<% end %>
 				</div>
 			</div>
 			<% end %>
 		</div>
-		<div class="books_index_category">
-			<h1>全てのブックマークサイト</h1>
-		</div>
-		<div class="books_index_bookmarks2">
-			<% @books1.each do |book| %>
-			<div class="books_index_box2">
-				<h3><%= book.category %></h3>
-				<%= link_to book_path(book.id) do %>
-				<div class="books_index_box_image">
-					<h2><%= book.article %></h2>
-				</div>
-				<% end %>
-				<div class="books_index_box_category_article">
-					<div class="books_index_box_category">
-					</div>
-					<div class="books_index_box_article">
-						<p><%= text_url_to_link(book.url).html_safe %></p>
-					</div>
-				</div>
-				<div class="books_index_box_date_favorite">
-					<div class="books_index_box_date">
-						<%= book.created_at.strftime('%Y/%m/%d') %>
-					</div>
-					<div class="books_index_box_favorite">
-						<% if Favorite.find_by(user_id:current_user,book_id:book.id) %>
-							<%= link_to("/favorites/#{book.id}/destroy",{method: "post"}) do %>
-							<span class="fa fa-heart like_btn_unlike"></span>
-							<% end %>
-						<% else %>
-							<%= link_to("/favorites/#{book.id}/create",{method: "post"}) do %>
-							<span class="fa fa-heart like_btn"></span>
-							<% end %>
-						<% end %>
-						<span><%= book.favorites.count %></span>
-						
-					</div>
-				</div>
-				<div class="books_index_box_name_icon">
-					<div class="books_index_box_name">
-						<p>TEXT BY<%= link_to book.user.name, user_path(book.user.id) %></p>
-					</div>
-					<%= link_to user_path(book.user.id) do %>
-					<div class="books_index_box_icon">
-						<%= attachment_image_tag book.user, :image,format: 'jpeg'%>
-					</div>
-					<% end %>
-				</div>
-			</div>
-			<% end %>
-		</div>
-	</div>
-	<div class="books_index_search">
-		<h1>検索</h1>
-		  <div class="wrapper">
-		    <div class="search-area">
-		      <form>
-		        <input type="text" id="search-text" placeholder="検索ワードを入力">
-		      </form>
-		      <div class="search-result">
-		        <div class="search-result__hit-num"></div>
-		        <div id="search-result__list"></div>
-		      </div>
+		<div class="books_index_under_t2">
+			<div class="wrap">
+				<h1>SHARE LINK一覧</h1>
+				<ul id="books_index_tab-menu" class="clearfix">
+			        <li><a href="#tab1" class="active">ALL</a></li>
+			        <li><a href="#tab2" class="">HTML&CSS</a></li>
+			        <li><a href="#tab3" class="">RubyOnRails</a></li>
+			        <li><a href="#tab4" class="">JavaScript</a></li>
+			        <li><a href="#tab5" class="">GitHub</a></li>
+		      	</ul>
 		    </div>
-
-		    
-		  </div><!-- /.wrapper -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-		<script type="text/javascript" src="./js/modernizr-custom.js"></script>
-		<script type="text/javascript" src="./js/dist/jquery.zoomslider.min.js"></script>
+		    <div id="books_index_bookmarks2" class="clearfix">
+<!-- All -->
+		     	<div id="tab1" class="index_tab">
+		     		<% @books1.each do |all| %>
+		     		<div class="books_index_tab_box_t2">
+			     		<div class="books_index_bookmark_category_t2">
+			     			<h3><%= all.category %></h3>
+			     		</div>
+			     		<%= link_to book_path(all.id) do %>
+			      		<div class="books_index_bookmark_article_t2">
+			      			<h2><%= all.article %></h2>
+			      		</div>
+			      		<% end %>
+			      		<div class="books_index_bookmark_url_t2">
+			      			<p><%= text_url_to_link(all.url).html_safe %></p>
+			      		</div>
+			      		<div class="books_index_bookmark_date_favorite_t2">
+				      		<div class="books_index_bookmark_date_t2">
+				      			<p><%= all.created_at.strftime('%Y/%m/%d') %></p>
+				      		</div>
+				      		<div class="books_index_bookmark_favorite_t2">
+				      			<% if Favorite.find_by(user_id:current_user,book_id:all.id) %>
+							<%= link_to("/favorites/#{all.id}/destroy",{method: "post"}) do %>
+							<span class="fa fa-heart like_btn_unlike"></span>
+							<% end %>
+						<% else %>
+							<%= link_to("/favorites/#{all.id}/create",{method: "post"}) do %>
+							<span class="fa fa-heart like_btn"></span>
+							<% end %>
+						<% end %>
+						<span><%= all.favorites.count %></span>
+				      		</div>
+			      		</div>
+			      		<div class="books_index_bookmark_name_icon_t2">
+				      		<div class="books_index_bookmark_name_t2">
+				      			<p>TEXT BY<%= link_to all.user.name, user_path(all.user.id) %></p>
+				      		</div>
+				      		<div class="books_index_bookmark_icon_t2">
+				      			<%= attachment_image_tag all.user, :image,format: 'jpeg',fallback: "profile.png"%>
+				      		</div>
+			      		</div>
+		      		</div>
+		      		<% end %>
+				</div>
+<!-- HTML&CSS -->
+				<div id="tab2" class="index_tab">
+					<% @htmls.each do |html| %>
+		     		<div class="books_index_tab_box_t2">
+			     		<div class="books_index_bookmark_category_t2">
+			     			<h3><%= html.category %></h3>
+			     		</div>
+			     		<%= link_to book_path(html.id) do %>
+			      		<div class="books_index_bookmark_article_t2">
+			      			<h2><%= html.article %></h2>
+			      		</div>
+			      		<% end %>
+			      		<div class="books_index_bookmark_url_t2">
+			      			<p><%= text_url_to_link(html.url).html_safe %></p>
+			      		</div>
+			      		<div class="books_index_bookmark_date_favorite_t2">
+				      		<div class="books_index_bookmark_date_t2">
+				      			<p><%= html.created_at.strftime('%Y/%m/%d') %></p>
+				      		</div>
+				      		<div class="books_index_bookmark_favorite_t2">
+				      			<% if Favorite.find_by(user_id:current_user,book_id:html.id) %>
+							<%= link_to("/favorites/#{html.id}/destroy",{method: "post"}) do %>
+							<span class="fa fa-heart like_btn_unlike"></span>
+							<% end %>
+						<% else %>
+							<%= link_to("/favorites/#{html.id}/create",{method: "post"}) do %>
+							<span class="fa fa-heart like_btn"></span>
+							<% end %>
+						<% end %>
+						<span><%= html.favorites.count %></span>
+				      		</div>
+			      		</div>
+			      		<div class="books_index_bookmark_name_icon_t2">
+				      		<div class="books_index_bookmark_name_t2">
+				      			<p>TEXT BY<%= link_to html.user.name, user_path(html.user.id) %></p>
+				      		</div>
+				      		<div class="books_index_bookmark_icon_t2">
+				      			<%= attachment_image_tag html.user, :image,format: 'jpeg',fallback: "profile.png"%>
+				      		</div>
+			      		</div>
+		      		</div>
+		      		<% end %>
+				</div>
+<!--RubyOnRails -->
+				<div id="tab3" class="index_tab">
+					<% @rubys.each do |ruby| %>
+		     		<div class="books_index_tab_box_t2">
+			     		<div class="books_index_bookmark_category_t2">
+			     			<h3><%= ruby.category %></h3>
+			     		</div>
+			     		<%= link_to book_path(ruby.id) do %>
+			      		<div class="books_index_bookmark_article_t2">
+			      			<h2><%= ruby.article %></h2>
+			      		</div>
+			      		<% end %>
+			      		<div class="books_index_bookmark_url_t2">
+			      			<p><%= text_url_to_link(ruby.url).html_safe %></p>
+			      		</div>
+			      		<div class="books_index_bookmark_date_favorite_t2">
+				      		<div class="books_index_bookmark_date_t2">
+				      			<p><%= ruby.created_at.strftime('%Y/%m/%d') %></p>
+				      		</div>
+				      		<div class="books_index_bookmark_favorite_t2">
+				      			<% if Favorite.find_by(user_id:current_user,book_id:ruby.id) %>
+							<%= link_to("/favorites/#{ruby.id}/destroy",{method: "post"}) do %>
+							<span class="fa fa-heart like_btn_unlike"></span>
+							<% end %>
+						<% else %>
+							<%= link_to("/favorites/#{ruby.id}/create",{method: "post"}) do %>
+							<span class="fa fa-heart like_btn"></span>
+							<% end %>
+						<% end %>
+						<span><%= ruby.favorites.count %></span>
+				      		</div>
+			      		</div>
+			      		<div class="books_index_bookmark_name_icon_t2">
+				      		<div class="books_index_bookmark_name_t2">
+				      			<p>TEXT BY<%= link_to ruby.user.name, user_path(ruby.user.id) %></p>
+				      		</div>
+				      		<div class="books_index_bookmark_icon_t2">
+				      			<%= attachment_image_tag ruby.user, :image,format: 'jpeg',fallback: "profile.png"%>
+				      		</div>
+			      		</div>
+		      		</div>
+		      		<% end %>
+				</div>
+<!-- JavaScript  -->
+				<div id="tab4" class="index_tab">
+					<% @jss.each do |js| %>
+		     		<div class="books_index_tab_box_t2">
+			     		<div class="books_index_bookmark_category_t2">
+			     			<h3><%= js.category %></h3>
+			     		</div>
+			     		<%= link_to book_path(js.id) do %>
+			      		<div class="books_index_bookmark_article_t2">
+			      			<h2><%= js.article %></h2>
+			      		</div>
+			      		<% end %>
+			      		<div class="books_index_bookmark_url_t2">
+			      			<p><%= text_url_to_link(js.url).html_safe %></p>
+			      		</div>
+			      		<div class="books_index_bookmark_date_favorite_t2">
+				      		<div class="books_index_bookmark_date_t2">
+				      			<p><%= js.created_at.strftime('%Y/%m/%d') %></p>
+				      		</div>
+				      		<div class="books_index_bookmark_favorite_t2">
+				      			<% if Favorite.find_by(user_id:current_user,book_id:js.id) %>
+							<%= link_to("/favorites/#{js.id}/destroy",{method: "post"}) do %>
+							<span class="fa fa-heart like_btn_unlike"></span>
+							<% end %>
+						<% else %>
+							<%= link_to("/favorites/#{js.id}/create",{method: "post"}) do %>
+							<span class="fa fa-heart like_btn"></span>
+							<% end %>
+						<% end %>
+						<span><%= js.favorites.count %></span>
+				      		</div>
+			      		</div>
+			      		<div class="books_index_bookmark_name_icon_t2">
+				      		<div class="books_index_bookmark_name_t2">
+				      			<p>TEXT BY<%= link_to js.user.name, user_path(js.user.id) %></p>
+				      		</div>
+				      		<div class="books_index_bookmark_icon_t2">
+				      			<%= attachment_image_tag js.user, :image,format: 'jpeg',fallback: "profile.png"%>
+				      		</div>
+			      		</div>
+		      		</div>
+		      		<% end %>
+				</div>
+<!-- GitHub -->
+				<div id="tab5" class="index_tab">
+					<% @gits.each do |git| %>
+		     		<div class="books_index_tab_box_t2">
+			     		<div class="books_index_bookmark_category_t2">
+			     			<h3><%= git.category %></h3>
+			     		</div>
+			     		<%= link_to book_path(git.id) do %>
+			      		<div class="books_index_bookmark_article_t2">
+			      			<h2><%= git.article %></h2>
+			      		</div>
+			      		<% end %>
+			      		<div class="books_index_bookmark_url_t2">
+			      			<p><%= text_url_to_link(git.url).html_safe %></p>
+			      		</div>
+			      		<div class="books_index_bookmark_date_favorite_t2">
+				      		<div class="books_index_bookmark_date_t2">
+				      			<p><%= git.created_at.strftime('%Y/%m/%d') %></p>
+				      		</div>
+				      		<div class="books_index_bookmark_favorite_t2">
+				      			<% if Favorite.find_by(user_id:current_user,book_id:git.id) %>
+							<%= link_to("/favorites/#{git.id}/destroy",{method: "post"}) do %>
+							<span class="fa fa-heart like_btn_unlike"></span>
+							<% end %>
+						<% else %>
+							<%= link_to("/favorites/#{git.id}/create",{method: "post"}) do %>
+							<span class="fa fa-heart like_btn"></span>
+							<% end %>
+						<% end %>
+						<span><%= git.favorites.count %></span>
+				      		</div>
+			      		</div>
+			      		<div class="books_index_bookmark_name_icon_t2">
+				      		<div class="books_index_bookmark_name_t2">
+				      			<p>TEXT BY<%= link_to git.user.name, user_path(git.user.id) %></p>
+				      		</div>
+				      		<div class="books_index_bookmark_icon_t2">
+				      			<%= attachment_image_tag git.user, :image,format: 'jpeg',fallback: "profile.png"%>
+				      		</div>
+			      		</div>
+		      		</div>
+		      		<% end %>
+				</div>
+			</div>
+	    </div>
 	</div>
-	
+	<div class="books_index_right">
+		<div class="books_index_ranking_title">
+			<h1>お気に入り数ランキング</h1>
+		</div>
+		<div class="books_index_ranking_all">
+			<% @rank.each.with_index(1) do |rank, i| %>
+			<div class="books_index_ranking_box">
+				<div class="books_index_rank_count">
+					<div class="books_index_rankcount">
+						<h2><%= "#{i}" %></h2>
+					</div>
+				</div>
+				<div class="books_index_ranking_detail">
+					<div class="books_index_date">
+						<p><%= rank.created_at.strftime('%Y/%m/%d') %></p>
+					</div>
+					<%= link_to book_path(rank.id) do %>
+					<div class="books_index_article">
+						<h3><%= rank.article %></h3>
+					</div>
+					<% end %>
+					<div class="books_index_category_favorite">
+						<div class="books_index_ranking_category">
+							<h3><%= rank.category %></h3>
+						</div>
+						<div class="books_index_favorite_count">
+							<p><%= rank.favorites.count %> users</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<% end %>
+		</div>
+		
+		
+
+	</div>
 </div>
- <script type="text/javascript" src="js/books_show.js"></script>

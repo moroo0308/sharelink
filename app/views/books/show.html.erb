@@ -1,3 +1,10 @@
+<div class="notice">
+	<%if flash[:notice] %>
+	<div class="flash">
+		<%= flash[:notice] %>
+	</div>
+	<% end %>
+</div>
 <div class="book_show_center_t2">
 	<div class="book_show_box0_t2">
 		<div class="book_show_box1_t2">
@@ -23,8 +30,10 @@
 					<p><%= text_url_to_link(h(@book.url)).html_safe %></p>
 				</div>
 				<div class="book_show_icon_t2">
+					<% if @book.user.id == current_user.id %>
 					<%= link_to "", edit_book_path(@book.id), class: "fas fa-edit" %>
 					<%= link_to "", book_path(@book.id),method: :delete,class: "fas fa-trash-alt" ,"data-confirm" => "本当に削除しますか？"%>
+					<% end %>
 				</div>
 			</div>
 			<div class="book_show_bookmark_comment_t2">
@@ -55,20 +64,70 @@
 			</div>
 			<div id="book_show_tab_contents" class="clearfix">
 				<div id="tab1" class="tab">
-					<p>tab1</p>
-				</div>
-				<div id="tab2" class="tab">
-					<div class="book_show_comment_image_t2"></div>
+					<% @book.book_comments.each do |book_comment| %>
+					<div class="book_show_comment_image_t2">
+						<%= attachment_image_tag book_comment.user, :image,format: 'jpeg',fallback: "profile.png" %>
+					</div>
 					<div class="book_show_comment_t2">
-						<div class="book_show_comment_name_t2"></div>
+						<div class="book_show_comment_name_t2">
+							<p><%= book_comment.user.name %></p>
+						</div>
 						<div class="book_show_comment_box_t2">
-							<div class="book_show_comment_detail_box_t2"></div>
-							<div class="book_show_comment_date_t2"></div>
+							<div class="book_show_comment_detail_box_t2">
+								<h3><%= book_comment.comment %></h3>
+							</div>
+							<div class="book_show_comment_date_icon_t2">
+								<div class="book_show_comment_date_t2">
+									<p><%= book_comment.created_at.strftime('%Y/%m/%d')%></p>
+								</div>
+								<div class="book_show_comment_icon_t2">
+									<% if book_comment.user.id == current_user.id %>
+									<%= link_to "", book_comment_path(book_comment.id),method: :delete, class: "fas fa-trash-alt", "data-confirm" => "本当に削除しますか？" %>
+									<% end %>
+								</div>
+							</div>
 						</div>
 					</div>
+					<% end %>
+				</div>
+				<div id="tab2" class="tab">
+					<% @book.book_comments.each do |book_comment| %>
+					<div class="book_show_comment_image_t2">
+						<%= attachment_image_tag book_comment.user, :image,format: 'jpeg',fallback: "profile.png" %>
+					</div>
+					<div class="book_show_comment_t2">
+						<div class="book_show_comment_name_t2">
+							<p><%= book_comment.user.name %></p>
+						</div>
+						<div class="book_show_comment_box_t2">
+							<div class="book_show_comment_detail_box_t2">
+								<h3><%= book_comment.comment %></h3>
+							</div>
+							<div class="book_show_comment_date_icon_t2">
+								<div class="book_show_comment_date_t2">
+									<p><%= book_comment.created_at.strftime('%Y/%m/%d')%></p>
+								</div>
+								<div class="book_show_comment_icon_t2">
+									<% if book_comment.user.id == current_user.id %>
+									<%= link_to "", book_comment_path(book_comment.id),method: :delete, class: "fas fa-trash-alt", "data-confirm" => "本当に削除しますか？" %>
+									<% end %>
+								</div>
+							</div>
+						</div>
+					</div>
+					<% end %>
 				</div>
 			</div>
-			<div class="book_show_comment_text_t2"></div>
+			<%= form_for(@bookcomment,url: book_comments_path(book_id: @book.id)) do |f| %>
+			<div class="book_show_comment_text_t2">
+				<div class="book_show_text_t2">
+					<%= f.text_area :comment %>
+				</div>
+				<div class="book_show_submit_t2">
+					<%= f.submit "コメントする" %>
+				</div>
+			</div>
+			<% end %>
 		</div>
 	</div>
 </div>

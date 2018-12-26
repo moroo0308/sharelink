@@ -1,6 +1,7 @@
+<% @book.errors.full_messages.each do |message| %>
+ <%= message %>
+<% end %>
 <div class="notice">
-	<%if flash[:notice] %>
-	<% end %>
 </div>
 <div class="books_new_body">
 	<div class="books_new_top">
@@ -13,7 +14,7 @@
 		<%= f.select :category, Book.categories.keys, :selected=>Book.categories[@book.category] %>
 		<%= f.text_field :article, placeholder: "ブックマーク名" %>
 		<%= f.text_field :url, placeholder:"https://www.example.com" %>
-		<%= f.text_area :comment, placeholder:"無記入でも可" %>
+		<%= f.text_area :comment, placeholder:"コメントは無記入でも可" %>
 		<%= f.submit "投稿する" ,class: "books_new_top_url_submit" %>
 		<% end %>
 	</div>
