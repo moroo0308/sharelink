@@ -39,7 +39,7 @@
 			<div class="book_show_bookmark_comment_t2">
 				<div class="book_show_user_image_name_t2">
 					<div class="book_show_user_image_t2">
-						<%= attachment_image_tag @book.user, :image,format: 'jpeg',fallback: "profile.png" %>
+						<%= attachment_image_tag @book.user, :image,format: 'jpeg',fallback: "/images/profile.png" %>
 					</div>
 					<div class="book_show_user_name_date_t2">
 						<div class="book_show_user_name_t2">
@@ -66,7 +66,7 @@
 				<div id="tab1" class="tab">
 					<% @book.book_comments.each do |book_comment| %>
 					<div class="book_show_comment_image_t2">
-						<%= attachment_image_tag book_comment.user, :image,format: 'jpeg',fallback: "profile.png" %>
+						<%= attachment_image_tag book_comment.user, :image,format: 'jpeg',fallback: "/images/profile.png" %>
 					</div>
 					<div class="book_show_comment_t2">
 						<div class="book_show_comment_name_t2">
@@ -93,7 +93,7 @@
 				<div id="tab2" class="tab">
 					<% @book.book_comments.each do |book_comment| %>
 					<div class="book_show_comment_image_t2">
-						<%= attachment_image_tag book_comment.user, :image,format: 'jpeg',fallback: "profile.png" %>
+						<%= attachment_image_tag book_comment.user, :image,format: 'jpeg',fallback: "images/profile.png" %>
 					</div>
 					<div class="book_show_comment_t2">
 						<div class="book_show_comment_name_t2">

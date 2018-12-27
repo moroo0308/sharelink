@@ -15,13 +15,13 @@
 			他ユーザと共有ができるようになっております。</h2></br>
 		</div>
 		<p class="active">
-			<%= image_tag 'wil.jpg' %>
+			<%= image_tag '/images/wil.jpg' %>
 		</p>
 		<p>
-			<%= image_tag 'tim.jpg' %>
+			<%= image_tag '/images/tim.jpg' %>
 		</p>
 		<p>
-			<%= image_tag 'raw.jpg' %>
+			<%= image_tag '/images/raw.jpg' %>
 		</p>
 	</div>
 	<div class="books_index_pickup">
@@ -71,7 +71,7 @@
 					</div>
 					<%= link_to user_path(book.user.id) do %>
 					<div class="books_index_box_icon">
-						<%= attachment_image_tag book.user, :image,format: 'jpeg',fallback: "profile.png"%>
+						<%= attachment_image_tag book.user, :image,format: 'jpeg',fallback: "/images/profile.png"%>
 					</div>
 					<% end %>
 				</div>
@@ -127,7 +127,7 @@
 				      			<p>TEXT BY<%= link_to all.user.name, user_path(all.user.id) %></p>
 				      		</div>
 				      		<div class="books_index_bookmark_icon_t2">
-				      			<%= attachment_image_tag all.user, :image,format: 'jpeg',fallback: "profile.png"%>
+				      			<%= attachment_image_tag all.user, :image,format: 'jpeg',fallback: "/images/profile.png"%>
 				      		</div>
 			      		</div>
 		      		</div>
@@ -170,7 +170,7 @@
 				      			<p>TEXT BY<%= link_to html.user.name, user_path(html.user.id) %></p>
 				      		</div>
 				      		<div class="books_index_bookmark_icon_t2">
-				      			<%= attachment_image_tag html.user, :image,format: 'jpeg',fallback: "profile.png"%>
+				      			<%= attachment_image_tag html.user, :image,format: 'jpeg',fallback: "/images/profile.png"%>
 				      		</div>
 			      		</div>
 		      		</div>
@@ -213,7 +213,7 @@
 				      			<p>TEXT BY<%= link_to ruby.user.name, user_path(ruby.user.id) %></p>
 				      		</div>
 				      		<div class="books_index_bookmark_icon_t2">
-				      			<%= attachment_image_tag ruby.user, :image,format: 'jpeg',fallback: "profile.png"%>
+				      			<%= attachment_image_tag ruby.user, :image,format: 'jpeg',fallback: "/images/profile.png"%>
 				      		</div>
 			      		</div>
 		      		</div>
@@ -256,7 +256,7 @@
 				      			<p>TEXT BY<%= link_to js.user.name, user_path(js.user.id) %></p>
 				      		</div>
 				      		<div class="books_index_bookmark_icon_t2">
-				      			<%= attachment_image_tag js.user, :image,format: 'jpeg',fallback: "profile.png"%>
+				      			<%= attachment_image_tag js.user, :image,format: 'jpeg',fallback: "/images/profile.png"%>
 				      		</div>
 			      		</div>
 		      		</div>
@@ -299,7 +299,7 @@
 				      			<p>TEXT BY<%= link_to git.user.name, user_path(git.user.id) %></p>
 				      		</div>
 				      		<div class="books_index_bookmark_icon_t2">
-				      			<%= attachment_image_tag git.user, :image,format: 'jpeg',fallback: "profile.png"%>
+				      			<%= attachment_image_tag git.user, :image,format: 'jpeg',fallback: "/images/profile.png"%>
 				      		</div>
 			      		</div>
 		      		</div>

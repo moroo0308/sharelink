@@ -2,7 +2,7 @@
 		<div class="user_show_box_t2">
 			<div class="user_show_image_name_t2">
 				<div class="user_show_image_t2">
-					<%= attachment_image_tag user, :image,format: 'jpeg' , fallback: "profile.png" ,class: "user_list_userimage_class" %>
+					<%= attachment_image_tag user, :image,format: 'jpeg' , fallback: "/images/profile.png" ,class: "user_list_userimage_class" %>
 				</div>
 				<div class="user_show_name_t2">
 					<p><%= link_to user.name, user_path(user.id) %></p>
