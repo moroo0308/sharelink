@@ -43,7 +43,7 @@
 					</div>
 					<div class="book_show_user_name_date_t2">
 						<div class="book_show_user_name_t2">
-							<p><%= @book.user.name %></p>
+							<p><%= link_to @book.user.name,user_path(@book.user.id) %></p>
 						</div>
 						<div class="book_show_user_date_t2">
 							<p><%= @book.created_at.strftime('%Y/%m/%d') %></p>
