@@ -1,6 +1,6 @@
 # README
 
-HTMl&CSS,RubyOnRails,Javascriptを3ヶ月で学んで製作したサイトです。
+HTMl&CSS,RubyOnRails,Javascriptを3ヶ月学んで製作したサイトです。
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
