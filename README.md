@@ -1,4 +1,6 @@
-<h1>HTMl&CSS,RubyOnRails,Javascriptを3ヶ月学んで製作したWebアプリケーションです。</h1>
+<h1>morooのポートフォリオ</h1>
+
+HTMl&CSS,RubyOnRails,Javascriptを3ヶ月学んで製作したWebアプリケーションです。
 
 アプリ名はShareLinkです。
 名前の通りユーザ同士でLinkをシェアできるようになっております。
