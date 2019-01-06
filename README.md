@@ -1,4 +1,4 @@
-<h1>morooのポートフォリオ</h1>
+<h1>moroo's Portfolio</h1>
 
 HTMl&CSS,RubyOnRails,Javascriptを3ヶ月学んで製作したWebアプリケーションです。
 
