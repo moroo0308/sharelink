@@ -1,6 +1,10 @@
-# README
+HTMl&CSS,RubyOnRails,Javascriptを3ヶ月学んで製作したWebアプリケーションです。
 
-HTMl&CSS,RubyOnRails,Javascriptを3ヶ月学んで製作したサイトです。
+アプリ名はShareLinkです。
+名前の通りユーザ同士でLinkをシェアできるようになっております。
+
+
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
