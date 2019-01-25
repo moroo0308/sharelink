@@ -10,8 +10,10 @@
 	
 	<div class="books_new_top_url">
 		<%= form_for(@book) do |f| %>
-		<%= f.label :category,"カテゴリ選択" %>
-		<%= f.select :category, Book.categories.keys, :selected=>Book.categories[@book.category] %>
+		<div class="books_new_categoryForm">
+			<%= f.label :category,"カテゴリ選択" %>
+			<%= f.select :category, Book.categories.keys, :selected=>Book.categories[@book.category] %>
+		</div>
 		<%= f.text_field :article, placeholder: "ブックマーク名" %>
 		<%= f.text_field :url, placeholder:"https://www.example.com" %>
 		<%= f.text_area :comment, placeholder:"コメントは無記入でも可" %>

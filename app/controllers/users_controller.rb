@@ -12,7 +12,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    
   end
 
   def update
