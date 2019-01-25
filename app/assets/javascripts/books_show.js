@@ -1,4 +1,6 @@
 //books_indexの画像切り替わり
+
+
 function slideSwitch() {
    var $active = $('#slideshow p.active');
 
